@@ -1,0 +1,33 @@
+name: Run Tests
+
+on:
+  push:
+    branches-ignore:
+      - 'main'
+
+jobs:
+  lint-app:
+    name: Test App
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+
+      - name: Use NodeJS v20.15.0
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.15.0
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Transpile
+        run: npm run transpile
+
+      - name: Test
+        run: npm test
+
