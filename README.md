@@ -1,6 +1,6 @@
 ## adventofcode
 
-Solutions to event puzzles for [Advent of Code](https://adventofcode.com/).
+Solutions for [Advent of Code](https://adventofcode.com/) event puzzles.
 
 ### Requirements
 
@@ -39,7 +39,7 @@ Solutions to event puzzles for [Advent of Code](https://adventofcode.com/).
 
 ### `npm run dev`
 
-Runs `vitest` in watch mode, watching file changes and errors to files linked with a `*.test.ts` file.
+Runs `vitest` in watch mode, watching file changes and errors to files linked with `*.test.ts` files.
 
 ### `npm run dev:debug`
 
