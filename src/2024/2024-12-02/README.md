@@ -44,3 +44,5 @@ Analyze the unusual data from the engineers. How many reports are safe?
 
 To begin, get your puzzle input (see input.txt).
 
+> [!INFO]
+> **Your puzzle answer was** 598.
