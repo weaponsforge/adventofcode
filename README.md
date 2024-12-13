@@ -37,12 +37,12 @@ It follows the directory structure:
 > └─ 📂 sample<br>
 > └─ 📂 2024<br>
 > └─── 📂 2024-12-01<br>
-> └────── 📂 lib<br>
-> └────── 📄 input.txt<br>
-> └────── 📄 quiz.ts<br>
-> └────── 📄 quiz.test.ts<br>
-> └────── 📄 sample.test.ts<br>
-> └────── 📄 README.md<br>
+> └───── 📂 lib<br>
+> └───── 📄 input.txt<br>
+> └───── 📄 quiz.ts<br>
+> └───── 📄 quiz.test.ts<br>
+> └───── 📄 sample.test.ts<br>
+> └───── 📄 README.md<br>
 > └─── 📂 2024-12-02<br>
 > └─── 📂 ...<br>
 > └─ 📂 2025<br>
@@ -130,6 +130,9 @@ Using Docker
 
 ## 📜 Available Scripts
 
+<details>
+<summary>Click to expand the list of available scripts</summary>
+
 ### `npm run dev`
 
 Runs `vitest` in watch mode, watching file changes and errors to files linked with `*.test.ts` files.
@@ -161,6 +164,9 @@ Fixes TypeScript lint errors.
 ### `npm test`
 
 Runs tests defined in `*.test.ts` files.
+
+</details>
+<br>
 
 @weaponsforge<br>
 20241213
