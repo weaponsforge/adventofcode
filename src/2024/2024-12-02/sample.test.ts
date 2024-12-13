@@ -11,7 +11,6 @@ export const data: number[][] = `7 6 4 2 1
   .split('\n')
   .map(row => row.split(' ').map(Number))
 
-
 test('countSafeReports - demo', () => {
   expect(countSafeReports(data)).toBe(2)
 })

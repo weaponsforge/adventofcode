@@ -1,3 +1,6 @@
 export { greet } from './sample/greet.js'
 export { getTotalDistance } from './2024/2024-12-01/lib/listTotalDistance.js'
 export { similarityScore } from './2024/2024-12-01/lib/similarityScore.js'
+export { countSafeReports } from './2024/2024-12-02/lib/countSafeReports.js'
+export { extractMultiply } from './2024/2024-12-03/lib/extractMultiply.js'
+export { extractMultiplyCondition } from './2024/2024-12-03/lib/extractMultiply.js'
