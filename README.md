@@ -23,6 +23,8 @@ Solutions for [Advent of Code](https://adventofcode.com/) event puzzles.
 
 ## Usage
 
+Using Node
+
 1. Run a TypeScript file inside the **/src** directory. For example:
 
    ```
@@ -35,11 +37,43 @@ Solutions for [Advent of Code](https://adventofcode.com/) event puzzles.
    ```
 3. See the [Available Scripts](#available-scripts) section for more information.
 
+## Alternate Usage
+
+Using Docker
+
+- Build the image
+   ```
+   docker compose -f docker-compose.dev.yml build
+   ```
+
+- Transpile the TypeScript files to JavaScript (PowerShell)
+   ```
+   docker run -it -v ${pwd}:/opt/app -v /opt/app/node_modules --rm weaponsforge/adventofcode:dev npm run transpile
+   ```
+
+- Run tests (PowerShell)
+   ```
+   docker run -it -v ${pwd}:/opt/app -v /opt/app/node_modules --rm weaponsforge/adventofcode:dev npm test
+   ```
+
+- Watch TS file updates: Use available scripts - `npm run watch`, `npm run watch:docker:win`
+   ```
+   docker run -it -v ${pwd}:/opt/app -v /opt/app/node_modules --rm weaponsforge/adventofcode:dev <AVAILABLE_SCRIPT>
+   ```
+
 ## Available Scripts
 
 ### `npm run dev`
 
 Runs `vitest` in watch mode, watching file changes and errors to files linked with `*.test.ts` files.
+
+### `npm run watch`
+
+Watches file changes in `.ts` files using the `tsc --watch` option.
+
+### `npm run watch:docker:win`
+
+Watches file changes in `.ts` files using the `tsc --watch` option with `dynamicPriorityPolling` in Docker containers running in Windows WSL2.
 
 ### `npm run dev:debug`
 

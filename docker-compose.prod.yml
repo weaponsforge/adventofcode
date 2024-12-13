@@ -1,0 +1,15 @@
+services:
+  weaponsforge.adventofcode:
+    container_name: weaponsforge-adventofcode
+    image: weaponsforge/adventofcode:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    volumes:
+      - ./output:/opt/app/output
+      - /opt/app/node_modules
+    ports:
+      - "9229:9229"
+    stdin_open: true
+    tty: true
