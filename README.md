@@ -9,6 +9,7 @@ This repository contains solutions and a local development environment for the [
 
 - Day 1: Historian Hysteria [[link]](/src/2024/2024-12-01/README.md)
 - Day 2: Red-Nosed Reports [[link]](/src/2024/2024-12-02/README.md)
+- Day 3: Mull It Over [[link]](/src/2024/2024-12-03/README.md)
 
 </details>
 
