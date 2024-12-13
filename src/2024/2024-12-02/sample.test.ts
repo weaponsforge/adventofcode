@@ -15,3 +15,7 @@ export const data: number[][] = `7 6 4 2 1
 test('countSafeReports - demo', () => {
   expect(countSafeReports(data)).toBe(2)
 })
+
+test('countSafeReports with Dampener - demo', () => {
+  expect(countSafeReports(data, true)).toBe(4)
+})

@@ -8,7 +8,7 @@ export default [
   { languageOptions: { globals: globals.node } },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
-  { ignores: ['node_modules/*'] },
+  { ignores: ['node_modules/**'] },
   {
     rules: {
       // 'no-unused-vars': 'off',

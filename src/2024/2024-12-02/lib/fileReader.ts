@@ -1,5 +1,5 @@
 import path from 'path'
-import { readFile, currentDirectory } from '@/lib/file.js'
+import { readFile, currentDirectory } from '@/utils/file.js'
 
 /**
  * Reads the quiz's input file into two (2) string arrays

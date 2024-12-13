@@ -8,6 +8,7 @@ This repository contains solutions and a local development environment for the [
 <summary><b style="font-size: 24px;">2024</b></summary>
 
 - Day 1: Historian Hysteria [[link]](/src/2024/2024-12-01/README.md)
+- Day 2: Red-Nosed Reports [[link]](/src/2024/2024-12-02/README.md)
 
 </details>
 

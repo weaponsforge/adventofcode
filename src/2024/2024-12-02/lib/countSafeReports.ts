@@ -37,9 +37,6 @@ const isReportSafe = (report: number[]): boolean => {
       newDirection = DIRECTION.DESC
     }
 
-    // There's no change in direction
-    if (newDirection === DIRECTION.IDLE) break
-
     if ( // There's a change in a non-IDLE direction
       currentState.direction !== DIRECTION.IDLE &&
       newDirection !== currentState.direction
@@ -57,11 +54,36 @@ const isReportSafe = (report: number[]): boolean => {
 }
 
 /**
+ * Removes a single level (number) from an unsafe report until it finds a safe pattern or until all levels are removed and retried safety checking
+ * @param report {number[]} Array of reports containing levels (numbers)
+ * @returns {boolean} Flag that indicates if an unsafe report is safe or still unsafe
+ */
+const problemDampener = (report: number[]): boolean => {
+  let isSafe = false
+
+  for (let i = 0; i < report.length; i += 1) {
+    const removeLevelIndex = i
+    const reportMod = report.filter((_, index) => index !== removeLevelIndex)
+
+    if (isReportSafe(reportMod)) {
+      isSafe = true
+      break
+    }
+  }
+
+  return isSafe
+}
+
+/**
  * Counts the number of safe reports (row)
  * @param list {number[]} Array of arrays of reports (numbers)
+ * @param withDampener {boolean} Flag to remove one level at a time from an unsafe report and retry checking its safety
  * @returns {number} Number of safe reports
  */
-export const countSafeReports = (list: number[][]): number => {
+export const countSafeReports = (
+  list: number[][],
+  withDampener: boolean = false
+): number => {
   let safeCount = 0
 
   if (!Array.isArray(list)) {
@@ -81,6 +103,12 @@ export const countSafeReports = (list: number[][]): number => {
 
     if (isReportSafe(report)) {
       safeCount += 1
+    } else {
+      if (withDampener) {
+        if (problemDampener(report)) {
+          safeCount += 1
+        }
+      }
     }
   }
 
