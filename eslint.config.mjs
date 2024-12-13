@@ -11,13 +11,14 @@ export default [
   { ignores: ['node_modules/*'] },
   {
     rules: {
-      'no-unused-vars': 'error',
+      // 'no-unused-vars': 'off',
       'no-undef': 'error',
+      'no-trailing-spaces': 'error',
+      '@typescript-eslint/no-unused-vars': ['error'],
       'indent': ['error', 2],
       'linebreak-style': ['error', 'unix'],
       'quotes': ['error', 'single'],
       'semi': ['error', 'never'],
-      'no-trailing-spaces': 'error',
       'comma-dangle': ['error', 'never'],
       'object-curly-spacing': ['error', 'always'],
       'eol-last': ['error', 'always']
