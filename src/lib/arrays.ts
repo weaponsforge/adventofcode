@@ -1,6 +1,6 @@
 export enum ARRAY_ORDERING {
-  ASC,  // eslint-disable-line no-unused-vars
-  DESC // eslint-disable-line no-unused-vars
+  ASC,
+  DESC
 }
 
 /**
