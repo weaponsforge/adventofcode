@@ -1,15 +1,15 @@
 import { test, expect } from 'vitest'
 import { extractMultiply, extractMultiplyCondition } from './lib/extractMultiply.js'
 
-const data = 'xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))'
+const data = 'mul(2,4)@^do_not_mul(7,3)+mul(9,23]then(mul(6,3))%&mul[4,2]!mul(11,8)'
 
 // eslint-disable-next-line
-const dataCondition = "xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))"
+const dataCondition = "&mul[8,4]!mul(18,4)^xmul(3,6)don't()_mul(2,3)+mul(4,7](mul(12,2)undo()?)"
 
 test('extract mul() and process - demo', () => {
-  expect(extractMultiply(data)).toBe(161)
+  expect(extractMultiply(data)).toBe(135)
 })
 
 test('extract and process mul() with do() - demo', () => {
-  expect(extractMultiplyCondition(dataCondition)).toBe(48)
+  expect(extractMultiplyCondition(dataCondition)).toBe(90)
 })

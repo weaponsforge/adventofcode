@@ -26,3 +26,6 @@ export const quiz20241203_02 = (): number => {
   console.log('MULTIPLICATION WITH CONDITION:', sumMultiply)
   return sumMultiply
 }
+
+quiz20241203_01()
+quiz20241203_02()

@@ -41,8 +41,7 @@ It follows the directory structure:
 > └─── 📂 2024-12-01<br>
 > └───── 📂 lib<br>
 > └───── 📄 input.txt<br>
-> └───── 📄 quiz.ts<br>
-> └───── 📄 quiz.test.ts<br>
+> └───── 📄 main.ts<br>
 > └───── 📄 sample.test.ts<br>
 > └───── 📄 README.md<br>
 > └─── 📂 2024-12-02<br>
@@ -57,11 +56,10 @@ It follows the directory structure:
 
 Each Advent of Code (AOC) event quiz has its folder under **`"/src/<YEAR>/<YYYY-MM-DD>"`** containing:
 - **/lib**: Folder containing main quiz solution logic
-- **input.txt**: Quiz input from AOC
-- **quiz.ts**: Quiz answer(s) validated with AOC
-- **quiz.test.ts**: Test of the correct quiz answers
+- **input.txt**: Random quiz input
+- **main.ts**: Main program entry point containing quiz answer(s) using random input
 - **sample.test.ts**: Minimal sample input with expected correct answers
-- **README.md**: Static copy of the AOC quiz question
+- **README.md**: Reference and other notes about the AOC quiz question
 
 #### Other Items
 
@@ -94,17 +92,21 @@ Each Advent of Code (AOC) event quiz has its folder under **`"/src/<YEAR>/<YYYY-
 
 Using Node
 
-1. Run a non-test TypeScript file inside the **/src** directory. For example:
-
+1. (Optional) Replace the values of specific `input.txt` in the `"/src/<YEAR>/<YYYY-MM-DD>"` directories with actual AOC input.
+2. Run a non-test TypeScript file inside the **/src** directory. For example:
    ```
    npx vite-node src/sample/sample.ts
    ```
-2. Run compiled JavaScript code from the TypeScript files. For example:
+
+   ```
+   npx vite-node src/2024/2024-12-01/main.ts
+   ```
+3. Run compiled JavaScript code from the TypeScript files. For example:
    ```
    npm run transpile
    node dist/sample/sample.js
    ```
-3. See the [Available Scripts](#available-scripts) section for more information.
+4. See the [Available Scripts](#available-scripts) section for more information.
 
 ## ⚡ Alternate Usage
 
