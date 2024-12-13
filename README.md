@@ -34,7 +34,7 @@ It follows the directory structure:
 > [!NOTE]
 > 📂 dist<br>
 > 📂 src<br>
-> └─ 📂 lib<br>
+> └─ 📂 utils<br>
 > └─ 📂 sample<br>
 > └─ 📂 2024<br>
 > └─── 📂 2024-12-01<br>
