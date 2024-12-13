@@ -12,6 +12,8 @@
     "dev": "vitest",
     "dev:debug": "vite-node src/sample/sample.ts",
     "transpile": "tsc -p tsconfig.json && tsc-alias",
+    "watch": "tsc -p tsconfig.json --watch",
+    "watch:docker:win": "tsc -p tsconfig.json --watch --watchFile dynamicPriorityPolling --watchDirectory dynamicPriorityPolling",
     "lint": "eslint \"src/**/*.ts\" *.mjs *.ts",
     "lint:fix": "eslint \"src/**/*.ts\" *.mjs *.ts --fix",
     "test": "vitest run"
