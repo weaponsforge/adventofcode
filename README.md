@@ -64,7 +64,7 @@ Each Advent of Code (AOC) event quiz has its folder under **`"/src/<YEAR>/<YYYY-
 
 #### Other Items
 
-- **/src/lib**: Folder containing generic utility helper functions
+- **/src/utils**: Folder containing generic utility helper functions
 - **/src/dist**: Folder containing the JavaScript files compiled from TypeScript (not committed to the repository)
 - **/src/sample**: Miscellaneous random examples
 - **/src/index.ts**: Exports all solutions to AOC quiz answer functions

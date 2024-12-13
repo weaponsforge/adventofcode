@@ -5,6 +5,6 @@ test('no. of safe reports quiz', () => {
   expect(quiz20241202_01()).toBe(598)
 })
 
-test('no. of safe reports quiz', () => {
+test('no. of safe reports quiz with dampener', () => {
   expect(quiz20241202_02()).toBe(634)
 })
