@@ -1,19 +1,25 @@
 import path from 'path'
 import { readFile, currentDirectory } from '@/lib/file.js'
-import { getTotalDistance } from './listTotalDistance.js'
+
+export type arrayLists = {
+  list1: string[];
+  list2: string[];
+}
 
 /**
- * Part 1/2 of the 2024-12-12 quiz
+ * Reads the quiz's input file into two (2) string arrays
+ * @returns {arrayLists} An object containing two (2) string arrays: `{ list1, list2 }`
  */
-export const quiz20241212_01 = (): number => {
+export const fileReader = (): arrayLists => {
   // Read quiz input file
   const directory = currentDirectory(import.meta.url)
-  const file = readFile(path.join(directory, 'input.txt'))
+  const file = readFile(path.join(directory, '..', 'input.txt'))
   const pairs: string[] = file.split('\n')
 
   const list1: string[] = []
   const list2: string[] = []
 
+  // Separate columns into arrays
   pairs.forEach(item => {
     const pair = item.split('   ')
 
@@ -25,9 +31,8 @@ export const quiz20241212_01 = (): number => {
     list2.push(pair[1])
   })
 
-  // Count the total distance
-  const total = getTotalDistance(list1.map(Number), list2.map(Number))
-  console.log('TOTAL DISTANCE:', total)
-
-  return total
+  return {
+    list1,
+    list2
+  }
 }
