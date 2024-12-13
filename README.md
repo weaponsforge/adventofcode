@@ -16,13 +16,13 @@ This repository contains solutions and a local development environment for the [
 <details>
 <summary>Click to expand the table of contents</summary>
 
-- [Advent of Code Quiz Information](#advent-of-code-quiz-information)
-- [Project Folder Structure](#project-folder-structure)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Alternate Usage](#alternate-usage)
-- [Available Scripts](#available-scripts)
+- [Advent of Code Quiz Information](#-advent-of-code-quiz-information)
+- [Project Folder Structure](#-project-folder-structure)
+- [Requirements](#-requirements)
+- [Installation](#%EF%B8%8F-installation)
+- [Usage](#-usage)
+- [Alternate Usage](#-alternate-usage)
+- [Available Scripts](#-available-scripts)
 
 </details>
 
