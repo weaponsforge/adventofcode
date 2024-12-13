@@ -24,6 +24,7 @@ export const fileReader = (): arrayLists => {
     const pair = item.split('   ')
 
     if (pair[0] === undefined || pair[1] === undefined) {
+      console.log(pair)
       throw new Error('Undefined value')
     }
 

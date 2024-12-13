@@ -26,3 +26,6 @@ export const quiz20241202_02 = (): number => {
   console.log('NO. OF SAFE REPORTS WITH DAMPENER:', countSafe)
   return countSafe
 }
+
+quiz20241202_01()
+quiz20241202_02()
