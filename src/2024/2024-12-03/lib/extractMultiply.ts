@@ -34,3 +34,32 @@ export const extractMultiply = (corruptedInstructions: string): number => {
 
   return multiplySum
 }
+
+/**
+ * Extracts and processes valid mul(x,y) sequences from long text that are preceeded with `do()` conditions.
+ * Ignores mul(x,y) sequences preceeded by `don't()` conditions.
+ * @param corruptedInstructions {string} Corrupted multiply instructions string
+ * @returns Sum of valid mul(x,y) operations from corrupted string
+ */
+export const extractMultiplyCondition = (corruptedInstructions: string): number => {
+  let multiplySum = 0
+
+  // Clean and normalize text
+  const instances = corruptedInstructions
+    .split('do()')
+    .map(line => {
+      const indexOfDont = line.indexOf('don\'t()')
+
+      if (indexOfDont >= 0) {
+        return line.substring(0, indexOfDont)
+      }
+
+      return line
+    })
+
+  for (let i = 0; i < instances.length; i += 1) {
+    multiplySum += extractMultiply(instances[i] as string)
+  }
+
+  return multiplySum
+}
