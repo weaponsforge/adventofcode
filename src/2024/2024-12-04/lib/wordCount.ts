@@ -1,10 +1,10 @@
-import { checkVertical, checkHorizontal, checkDiagonal } from './wordChecker.js'
+import { checkVertical, checkHorizontal, checkDiagonal } from './wordCheckerUtils.js'
 
 /**
- * Counts the number of occurence of the 'XMAS' word from a set of input
+ * Counts the number of occurence of the `WORD` from a set of input
  * @param data {CharacterArray} 2D string array containing the input text
  * @param WORD_TO_FIND {string} Word to find
- * @returns {number} Number of 'XMAS' words
+ * @returns {number} Number of `WORD`s
  */
 export const wordCount = (data: string[][], WORD_TO_FIND: string): number => {
   let xmasCount = 0

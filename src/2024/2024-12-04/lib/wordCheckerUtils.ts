@@ -16,7 +16,7 @@ interface CoordinateData {
 }
 
 /**
- * Checks for the 'XMAS' word in the vertical directions (up/down) from an (x,y) coordinate
+ * Finds the `WORD` input parameter in the vertical directions (up/down) from an (x,y) coordinate
  * @typedef coord {Coordinate} Coordinate object
  * @param coord.x {number} x coordinate (array x index)
  * @param coord.y {number} y coordinate (array y index)
@@ -25,7 +25,7 @@ interface CoordinateData {
  *   - `1` for "down" going to (N,N) from the `coord`
  * @param fullData {CharacterArray} 2D array of strings consisting of letters per item
  * @param WORD {string} Word to find
- * @returns {boolean} Flag indicating the existence of the 'XMAS' word
+ * @returns {boolean} Flag indicating the existence of the `WORD`
  */
 export const checkVertical = (coord: Coordinate, fullData: CharacterArray, WORD: string): boolean => {
   let yIndex = coord.y
@@ -45,13 +45,13 @@ export const checkVertical = (coord: Coordinate, fullData: CharacterArray, WORD:
 }
 
 /**
- * Checks for the 'XMAS' word in the horizontal directions (left/right) from an (x,y) coordinate
+ * Finds the `WORD` input parameter in the horizontal directions (left/right) from an (x,y) coordinate
  * @typedef coord {Coordinate} Coordinate object
  * @param coord.x {number} x coordinate (array x index)
  * @param coord.y {number} y coordinate (array y index)
  * @param coord.direction {number} `-1` for "left" going to (0,0) or `1` for "right" going to (N,N) from the `coord`
  * @param rowData {string[]} Array of row-wise letters from a 2D array
- * @returns {boolean} Flag indicating the existence of the 'XMAS' word
+ * @returns {boolean} Flag indicating the existence of the `WORD`
  * @param WORD {string} Word to find
  */
 export const checkHorizontal = (coord: Coordinate, rowData: string[], WORD: string): boolean => {
@@ -72,7 +72,7 @@ export const checkHorizontal = (coord: Coordinate, rowData: string[], WORD: stri
 }
 
 /**
- * Checks for the 'XMAS' word in the horizontal directions from an (x,y) coordinate
+ * Finds the `WORD` input parameter in the horizontal directions from an (x,y) coordinate
  * @typedef coord {Coordinate} Coordinate object
  * @param coord.x {number} x coordinate (array x index)
  * @param coord.y {number} y coordinate (array y index)
@@ -80,7 +80,7 @@ export const checkHorizontal = (coord: Coordinate, rowData: string[], WORD: stri
  * @param param.xDirection {number} `-1` for "left" going to (0,0) or `1` for "right" going to (N,N) from the `coord`
  * @param param.yDirection {number} `-1` for "up" going to (0,0) or `1` for "down" going to (N,N) from the `coord`
  * @param param.data {CharacterArray} 2D string array containing the input text
- * @returns {boolean} Flag indicating the existence of the 'XMAS' word
+ * @returns {boolean} Flag indicating the existence of the `WORD`
  * @param WORD {string} Word to find
  */
 export const checkDiagonal = (coord: CoordinateBase, param: CoordinateData, WORD: string): boolean => {
