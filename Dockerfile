@@ -26,7 +26,6 @@ FROM base AS production
 ENV NODE_ENV=production
 COPY --from=build /opt/app/dist /opt/app/dist
 COPY package*.json ./
-RUN npm install && npm prune --production
 USER user
 EXPOSE 9229
 CMD ["sh"]
