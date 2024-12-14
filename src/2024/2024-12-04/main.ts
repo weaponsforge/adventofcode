@@ -9,11 +9,19 @@ const data: string[][] = readFile(path.join(directory, 'input.txt'))
   .split('\n')
   .map(row => row.split(''))
 
+/**
+ * Part 1/2 of the 2024-12-04 quiz
+ * @returns {number} Counts the number of "XMAS" words
+ */
 const quiz20241204_01 = () => {
   const count = wordCount(data, 'XMAS')
   console.log('"XMAS" word count:', count)
 }
 
+/**
+ * Part 2/2 of the 2024-12-04 quiz
+ * @returns {number} Counts the number of overlapping "MAS" words
+ */
 const quiz20241204_02 = () => {
   const count = countMASword(data, 'MAS')
   console.log('"MAS-only" word count:', count)
