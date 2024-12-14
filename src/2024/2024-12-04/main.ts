@@ -1,0 +1,16 @@
+import path from 'path'
+import { currentDirectory, readFile } from '@/utils/file.js'
+import { wordCount } from './lib/wordCount.js'
+
+const directory = currentDirectory(import.meta.url)
+
+const data: string[][] = readFile(path.join(directory, 'input.txt'))
+  .split('\n')
+  .map(row => row.split(''))
+
+const quiz20241204_01 = () => {
+  const count = wordCount(data, 'XMAS')
+  console.log('"XMAS" word count:', count)
+}
+
+quiz20241204_01()
