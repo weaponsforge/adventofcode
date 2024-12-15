@@ -4,7 +4,7 @@ import { uniformArrayElements, arrayMiddleIndex } from '@/utils/arrays.js'
 /**
  * Checks if an "update" list is correct according to defined "rules"
  * @param rules {Rules} Object containing parsed and formatted rules and updates data
- * @param updateItems {number[]} "updates" item content
+ * @param updateItems {number[]} "updates" array items content
  * @returns Flag indicating if the set of `updateItems` is correct
  */
 export const isOrderedReport = (rules: Rules, updateItems: number[]): boolean => {
@@ -30,23 +30,6 @@ export const isOrderedReport = (rules: Rules, updateItems: number[]): boolean =>
     if (!afterItems.every(item => rules[currentItem]?.includes(item))) {
       isOrdered = false
       break
-    }
-
-    // Backtrack current item's inclusion in previous item maps
-    if (i > 0) {
-      for (let j = 0; j < i; j += 1) {
-        const beforeItem = updateItems[j] as number
-
-        if (rules[beforeItem] === undefined) {
-          isOrdered = false
-          break
-        }
-
-        if (!rules[beforeItem].includes(currentItem)) {
-          isOrdered = false
-          break
-        }
-      }
     }
   }
 
