@@ -40,7 +40,7 @@ export const isOrderedReport = (rules: Rules, updateItems: number[]): boolean =>
  * Counts the sum of middle page numbers from correctly-ordered "updates"
  * @param data {QuizData} Object containing "rules" and "updates" input
  * @param verbose {boolean} Flag to display processing log messages. Defaults to false.
- * @returns {number}
+ * @returns {number} Total middle page numbers from correct "updates"
  */
 export const sumOfCorrectUpdates = (data: QuizData, verbose: boolean = false): number => {
   let sum = 0
