@@ -39,7 +39,7 @@ const nextHotSwapIndex = (rules: Rules, restItems: number[], currentItem: Curren
  * @param unorderedItems {number[]} "updates" array items content
  * @returns {number[]} Corrected "update" items
  */
-const fixOrdering = (rules: Rules, unorderedItems: number[]): number[] => {
+export const fixOrdering = (rules: Rules, unorderedItems: number[]): number[] => {
   if (!uniformArrayElements(unorderedItems, 'number')) {
     throw new Error('Invalid item/s')
   }

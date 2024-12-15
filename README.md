@@ -11,6 +11,7 @@ This repository contains solutions and a local development environment for the [
 - Day 2: Red-Nosed Reports [[link]](/src/2024/2024-12-02/README.md)
 - Day 3: Mull It Over [[link]](/src/2024/2024-12-03/README.md)
 - Day 4: Ceres Search [[link]](/src/2024/2024-12-04/README.md)
+- Day 5: Print Queue [[link]](/src/2024/2024-12-05/README.md)
 
 </details>
 
