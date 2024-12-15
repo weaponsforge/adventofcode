@@ -2,13 +2,13 @@ import { test, expect } from 'vitest'
 import { getTotalDistance } from './lib/listTotalDistance.js'
 import { similarityScore } from './lib/similarityScore.js'
 
-const array1 = [3, 4, 2, 1, 3, 3]
-const array2 = [4, 3, 5, 3, 9, 3]
+const array1 = [8, 6, 6, 3, 10, 7]
+const array2 = [9, 5, 9, 5, 16, 7]
 
 test('listTotalDistance - demo', () => {
-  expect(getTotalDistance(array1, array2)).toBe(11)
+  expect(getTotalDistance(array1, array2)).toBe(13)
 })
 
 test('similarityScore - demo', () => {
-  expect(similarityScore(array1, array2)).toBe(31)
+  expect(similarityScore(array1, array2)).toBe(7)
 })

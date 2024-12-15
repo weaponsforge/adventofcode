@@ -1,4 +1,4 @@
-import { arrangeArray, ARRAY_ORDERING } from '@/lib/arrays.js'
+import { arrangeArray, ARRAY_ORDERING } from '@/utils/arrays.js'
 
 /**
  * Calculates the total distance between the smallest value-pairs from list `a` and list `b`

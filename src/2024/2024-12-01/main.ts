@@ -32,3 +32,6 @@ export const quiz20241201_02 = (): number => {
   console.log('SIMILARITY COUNT:', similarCount)
   return similarCount
 }
+
+quiz20241201_01()
+quiz20241201_02()
