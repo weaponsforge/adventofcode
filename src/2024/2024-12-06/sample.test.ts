@@ -1,0 +1,16 @@
+import path from 'path'
+import { test, expect } from 'vitest'
+
+import { readAOCInputFile, AOC_OUTPUT_TYPE } from '@/utils/aocInputFile.js'
+import { currentDirectory } from '@/utils/file.js'
+
+import { guardController } from './lib/guardController.js'
+
+const file = readAOCInputFile({
+  filePath: path.join(currentDirectory(import.meta.url), 'input.txt'),
+  type: AOC_OUTPUT_TYPE.STRING_ARRAY_2D
+}) as string [][]
+
+test('Count distinct positions', () => {
+  expect(guardController(file)).toBe(24)
+})
