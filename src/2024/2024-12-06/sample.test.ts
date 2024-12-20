@@ -5,6 +5,7 @@ import { readAOCInputFile, AOC_OUTPUT_TYPE } from '@/utils/aocInputFile.js'
 import { currentDirectory } from '@/utils/file.js'
 
 import { guardController } from './lib/guardController.js'
+import { findObstructionPositions } from './lib/guardControllerLoop.js'
 
 const file = readAOCInputFile({
   filePath: path.join(currentDirectory(import.meta.url), 'input.txt'),
@@ -13,4 +14,8 @@ const file = readAOCInputFile({
 
 test('Count distinct guard positions', () => {
   expect(guardController(file).positionCount).toBe(26)
+})
+
+test('Count obstackle positions', () => {
+  expect(findObstructionPositions(file)).toBe(2)
 })
