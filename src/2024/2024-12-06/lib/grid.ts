@@ -1,24 +1,46 @@
-import { GuardStatus, GuardDirection } from './guard.js'
-import type { GuardState } from './guard.js'
+import { GuardStatus, GuardDirection } from './guard.types.js'
+import type { GuardState } from './guard.types.js'
 
-export type GridDimensions = {
-  length: number;
-  width: number;
-}
 
+/**
+ * @class Grid
+ * @description Object containing a 2D array of strings and other data in which a `Guard` object runs. Each item represents an open path or obstacle.
+ */
 export class Grid {
+  /** 2D board string array */
   board: string[][] = []
+
+  /** Board length */
   length: number = 0
+
+  /** Board width */
   width: number = 0
+
+  /** Number of distinct positions that a `Guard` can traverse on the board */
   positionCount: number = 0
 
+  /** Initial (x,y) coordinate starting position of a `Guard` */
+  start: { x: number; y: number; }
+
+  /** Obstruction symbol. Guards turn clockwise if this symbol blocks their next step. */
   obstruction = '#'
+
+  /** Path symbol. Guards proceed to the next (x,y) coordinate after on this symbol. */
   pathSymbol = '.'
 
-  constructor (data: string[][]) {
+  /**
+   * @constructor
+   * @param {string[][]} data 2D string array containing paths `"."`, obstacles `"#"` and the `Guard` object
+   * @param obstructionSymbol
+   */
+  constructor (data: string[][], obstructionSymbol: string = '#') {
     this.board = data
     this.length = data.length
     this.width = (data[0])?.length as number
+    this.obstruction = obstructionSymbol
+    this.start = { x: -1, y: -1 }
+
+    this.findGuardStartPosition()
   }
 
   /**
@@ -58,6 +80,9 @@ export class Grid {
       if (initialState.status === GuardStatus.ACTIVE) break
     }
 
+    this.start.x = initialState.xPos
+    this.start.y = initialState.yPos
+
     return initialState
   }
 
@@ -95,6 +120,7 @@ export class Grid {
    * Displays the guard's distinct positions in the grid
    */
   print () {
+    console.clear()
     console.log(this.board.map(row => row.join(' ')))
   }
 }

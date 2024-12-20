@@ -14,10 +14,10 @@ const file = readAOCInputFile({
  * Counts the number of distinct guard positions in a grid
  */
 export const quiz20241206_01 = () => {
-  const positionCount = guardController(file, true)
+  const grid = guardController(file, true)
 
-  console.log('Distinct guard positions', positionCount)
-  return positionCount
+  console.log('Distinct guard positions:', grid.positionCount)
+  return grid.positionCount
 }
 
 quiz20241206_01()

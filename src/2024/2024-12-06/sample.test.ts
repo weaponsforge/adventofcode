@@ -11,6 +11,6 @@ const file = readAOCInputFile({
   type: AOC_OUTPUT_TYPE.STRING_ARRAY_2D
 }) as string [][]
 
-test('Count distinct positions', () => {
-  expect(guardController(file)).toBe(24)
+test('Count distinct guard positions', () => {
+  expect(guardController(file).positionCount).toBe(26)
 })
