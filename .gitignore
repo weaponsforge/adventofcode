@@ -6,3 +6,6 @@ dist/
 *.rar
 *.tgz
 src/**/*.js
+
+**/*.txt
+!src/**/*.txt
