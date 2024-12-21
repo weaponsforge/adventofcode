@@ -16,6 +16,6 @@ test('Count distinct guard positions', () => {
   expect(guardController(file).positionCount).toBe(26)
 })
 
-test('Count obstackle positions', () => {
+test('Count obstacle positions', () => {
   expect(findObstructionPositions(file)).toBe(2)
 })

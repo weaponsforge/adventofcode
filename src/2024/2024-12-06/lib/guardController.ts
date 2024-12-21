@@ -19,7 +19,7 @@ export const guardController = (data: string[][], printTrail: boolean = false): 
     let yDirection = 0
     let xDirection = 0
 
-    // Find the guard's direction
+    // Set the guard's direction in the grid
     switch(guard.direction) {
     case GuardDirection.UP:
       yDirection = -1

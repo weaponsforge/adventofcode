@@ -13,6 +13,7 @@ This repository contains solutions and a local development environment for the [
 - Day 4: Ceres Search [[link]](/src/2024/2024-12-04/README.md)
 - Day 5: Print Queue [[link]](/src/2024/2024-12-05/README.md)
 - Day 6: Guard Gallivant [[link]](/src/2024/2024-12-06/README.md)
+- Day 7: Bridge Repair [[link]](/src/2024/2024-12-07/README.md)
 
 </details>
 

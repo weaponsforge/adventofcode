@@ -5,3 +5,7 @@ dist/
 *.zip
 *.rar
 *.tgz
+src/**/*.js
+
+**/*.txt
+!src/**/*.txt
