@@ -4,7 +4,7 @@
  * @param {number} N Length of a linear array
  * @returns {string[][]} List (2D-string array) of possible operators placement combinations
  */
-const operatorCombinations = (
+export const operatorCombinations = (
   operators: string[] = ['+', '*'],
   N: number
 ): string[][] => {
@@ -32,7 +32,7 @@ const operatorCombinations = (
  * @param {string} eqnString Math equation expressed as string
  * @returns {number} Result of the `eqnString`
  */
-const doEquation = (numbers: number[], operators: string[]): number => {
+export const doEquation = (numbers: number[], operators: string[]): number => {
   let sum = numbers[0] as number
 
   operators.forEach((operator, index) => {
@@ -50,7 +50,7 @@ const doEquation = (numbers: number[], operators: string[]): number => {
 
 /**
  * Counts the total calibration sum of input lines whose elements (numbers) match the line's target sum
- * after processing with one of N possible combinations of `+` and `*` operands
+ * after processing with one of N possible combinations of `+` and `*` operator placements
  * @param input Input string array
  * @returns {number} Total calibration sum
  */
