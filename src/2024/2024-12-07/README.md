@@ -8,7 +8,7 @@ Visit the Advent of Code website for more information on this puzzle at:
 ## Code
 
 1. **totalCalibration.ts**
-   - `operatorCombinations()` - Finds the total number of possible combinations in which to place operator symbols for an `N`-length array
+   - `operatorCombinations()` - Finds the possible combinations in which to place operator symbols for an `N`-length array
 
    - `doEquation()` - Returns the result of an AoC text equation and a set of operator symbols with the condition: left to write equation processing, disregarding operator precedence
 

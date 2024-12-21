@@ -5,3 +5,4 @@ dist/
 *.zip
 *.rar
 *.tgz
+src/**/*.js

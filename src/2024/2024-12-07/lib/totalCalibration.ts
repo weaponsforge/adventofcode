@@ -1,13 +1,13 @@
 /**
- * Finds the total number of possible combinations in which to place operator symbols for an `N`-length array
+ * Finds the possible combinations in which to place operator symbols for an `N`-length array
  * @param {string[]} operators String array containing operator symbols
  * @param {number} N Length of a linear array
- * @returns {number} Total number
+ * @returns {string[][]} List (2D-string array) of possible operators placement combinations
  */
 const operatorCombinations = (
   operators: string[] = ['+', '*'],
   N: number
-) => {
+): string[][] => {
   const combinations: string[][] = []
   const totalCombinations = Math.pow(operators.length, N)
 
@@ -62,6 +62,7 @@ export const totalCalibrationResult = (input: string[]): number => {
     const line = input[i]
 
     if (line === undefined) break
+
     const [targetSum, data] = line.split(': ')
     const numbers = data?.split(' ').map(Number) as number[]
 
