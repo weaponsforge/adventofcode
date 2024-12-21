@@ -25,7 +25,6 @@ type Output = string | string[] | string[][] |
  * @param param.filePath {string} Full file path to an input text file
  * @param param.type {AOC_OUTPUT_TYPE} Type to convert the input text file
  * @param param.delimiter {string} String delimiter
- * @param moduleFile {string} File URL of the current module being executed: `"import.meta.url"`
  * @throws {Error}
  */
 export const readAOCInputFile = (param: FileInput): Output => {
