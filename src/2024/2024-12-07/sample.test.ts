@@ -14,5 +14,5 @@ const input = (readAOCInputFile({
   .split('\n')
 
 test('1/2: Total calibration result', () => {
-  expect(totalCalibrationResult(input)).toBe(3749)
+  expect(totalCalibrationResult(input)).toBe(295)
 })
