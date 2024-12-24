@@ -1,6 +1,8 @@
 ## ✨ adventofcode
 
-This repository contains solutions and a local development environment for the [Advent of Code](https://adventofcode.com/) event puzzles.
+This repository contains solutions and a local development environment for the [Advent of Code](https://adventofcode.com/) event puzzles using TypeScript/JavaScript.
+
+The codes are structured in a way that discusses and walks through the solution steps for the AoC quizzes rather than focusing on AoC's competitive programming.
 
 ### 🎄 Advent of Code Quiz Information
 
@@ -110,7 +112,7 @@ Using Node
    npm run transpile
    node dist/sample/sample.js
    ```
-4. See the [Available Scripts](#available-scripts) section for more information.
+4. See the [Available Scripts](#-available-scripts) section for more information.
 
 ## ⚡ Alternate Usage
 
