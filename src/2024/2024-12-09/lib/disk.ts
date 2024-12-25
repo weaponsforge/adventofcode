@@ -44,7 +44,7 @@ export class Disk {
   }
 
   /**
-   * Calculates the check sum of a compacted disk files and spaces text map
+   * Calculates and returns the check sum of a compacted disk files and spaces text map
    * @param {string[]} [compactFileText] (Optional) Compacted disk map resulting from the `this.compactFileDisk()` function. Processes the local `this.compactMap[]` data if parameter is not provided.
    * @returns {number} Check sum - sum of file block IDs multiplied with their positions
    */

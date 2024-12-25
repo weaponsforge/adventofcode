@@ -15,7 +15,7 @@ const input = readAOCInputFile({
  * Counts the check sum of a compacted disk represented by strings of text
  */
 export const quiz20241209_01 = () => {
-  const disk = new CompactDisk(input)
+  const disk = new CompactDisk(input, true)
   const sum = disk.calculateDiskChecksum()
 
   console.log('Compacted disk checksum:', sum)
