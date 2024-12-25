@@ -1,6 +1,8 @@
 ## ✨ adventofcode
 
-This repository contains solutions and a local development environment for the [Advent of Code](https://adventofcode.com/) event puzzles.
+This repository contains solutions and a local development environment for the [Advent of Code](https://adventofcode.com/) event puzzles using TypeScript/JavaScript.
+
+The codes are structured in a way that discusses and walks through the solution steps for the AoC quizzes rather than focusing on AoC's competitive programming.
 
 ### 🎄 Advent of Code Quiz Information
 
@@ -14,6 +16,7 @@ This repository contains solutions and a local development environment for the [
 - Day 5: Print Queue [[link]](/src/2024/2024-12-05/README.md)
 - Day 6: Guard Gallivant [[link]](/src/2024/2024-12-06/README.md)
 - Day 7: Bridge Repair [[link]](/src/2024/2024-12-07/README.md)
+- Day 8: Resonant Collinearity [[link]](/src/2024/2024-12-08/README.md)
 
 </details>
 
@@ -110,7 +113,7 @@ Using Node
    npm run transpile
    node dist/sample/sample.js
    ```
-4. See the [Available Scripts](#available-scripts) section for more information.
+4. See the [Available Scripts](#-available-scripts) section for more information.
 
 ## ⚡ Alternate Usage
 
