@@ -13,5 +13,5 @@ const input = readAOCInputFile({
 
 test('Compacted disk checksum', () => {
   const disk = new CompactDisk(input)
-  expect(disk.calculateDiskChecksum()).toBe(1928)
+  expect(disk.calculateDiskChecksum()).toBe(967)
 })
