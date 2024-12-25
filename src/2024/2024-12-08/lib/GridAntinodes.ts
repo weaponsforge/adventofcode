@@ -74,7 +74,7 @@ export class GridAntiNodes {
 
   /**
    * Stores the (x,y) coordinates of an `Antinode`
-   * @param {string} antinodeCoord String-concatenated (x,y) coordinate of an `Antinode`
+   * @param {string} antinodeCoord String-concatenated (y,x) coordinate of an `Antinode`
    */
   storeAntinode (antinodeCoord: string): void {
     this.antinodes.add(antinodeCoord)

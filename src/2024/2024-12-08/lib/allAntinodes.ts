@@ -70,7 +70,7 @@ export const countAllAntinodes = (inputFile: string[][]): number => {
       // Find all aligned antinodes
       getAntinodesInPath(a1, diff, -1, gridDimensions)
         .forEach(
-          item => grid.antinodes.add(item)
+          item => grid.storeAntinode(item)
         )
     }
 
@@ -81,7 +81,7 @@ export const countAllAntinodes = (inputFile: string[][]): number => {
       // Find all aligned antinodes
       getAntinodesInPath(a2, diff, 1, gridDimensions)
         .forEach(
-          item => grid.antinodes.add(item)
+          item => grid.storeAntinode(item)
         )
     }
 
