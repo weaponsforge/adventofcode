@@ -8,14 +8,16 @@ export class GridAntiNodes {
   /** 2D string user input array */
   board: string[][] = []
 
-  /** Array containing Antenna (x,y) coordinates */
+  /** Array containing Antenna (y,x) coordinates */
   antennas: Antenna[] = []
 
-  /** List of unique Antinode (x,y) coordinates */
-  antinodes = new Set()
+  /** List of unique Antinode (y,x) coordinate strings */
+  antinodes = new Set<string>()
 
-  /** Array indices used in traversing the board and antennas objects */
+  /** Grid array index pointing to the current antenna in the `this.antennas[]` list */
   currentAntIndex: number = 0
+
+  /** Grid array index pointing to the next antenna after `this.currentAntIndex` */
   nextAntIndex: number = 1
 
   /**

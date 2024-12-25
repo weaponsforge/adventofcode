@@ -3,7 +3,7 @@
 Visit the Advent of Code website for more information on this puzzle at:
 
 **Source:** https://adventofcode.com/2024/day/8<br>
-**Status:** On-going ⭐
+**Status:** Complete ⭐⭐
 
 ## Code
 
@@ -14,3 +14,9 @@ Visit the Advent of Code website for more information on this puzzle at:
 ### `uniqueAntinodes.ts`
 
 - `uniqueAntinodes()` - Counts the unique locations in the grid that contains an antinode
+
+### `allAntinodes.ts`
+
+- `getAntinodesInPath()` - Finds all `Antinode` coordinates along a path within a 2D array (grid) given a `Point`, increment steps and a +/- direction
+
+- `countAllAntinodes()` - Counts the unique locations in the grid that contains all locations of antinodes along a path

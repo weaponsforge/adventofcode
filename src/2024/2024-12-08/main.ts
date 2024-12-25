@@ -3,6 +3,7 @@ import { AOC_OUTPUT_TYPE, readAOCInputFile } from '@/utils/aocInputFile.js'
 import { currentDirectory } from '@/utils/file.js'
 
 import { countAntinodes } from './lib/uniqueAntinodes.js'
+import { countAllAntinodes } from './lib/allAntinodes.js'
 
 const input = readAOCInputFile({
   filePath: path.join(currentDirectory(import.meta.url), 'input.txt'),
@@ -18,4 +19,14 @@ const quiz20241208_01 = () => {
   console.log('Antinodes in unique locations:', count)
 }
 
+/**
+ * Part 2/2 of the 2024-12-08 quiz
+ * Counts the unique locations in the grid of all antinodes that contains an antinode
+ */
+const quiz20241208_02 = () => {
+  const count = countAllAntinodes(input)
+  console.log('All Antinodes count:', count)
+}
+
 quiz20241208_01()
+quiz20241208_02()
