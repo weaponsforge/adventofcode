@@ -77,7 +77,7 @@ Each Advent of Code (AOC) event quiz has its folder under **`"/src/<YEAR>/<YYYY-
 
 ### 📋 Requirements
 
-- Node v20.15.0
+- Node v20.15.0 (at least)
    - node: 20.15.0
    - npm: 10.7.0
 
