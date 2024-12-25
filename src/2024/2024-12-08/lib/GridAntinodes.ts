@@ -84,16 +84,20 @@ export class GridAntiNodes {
    */
   printGrid (withAntinodes: boolean = false): void {
     if (withAntinodes) {
+      const printBoard = structuredClone(this.board)
+
       for (const antinode of this.antinodes) {
         const coord = (antinode as string).split(',').map(item => Number(item))
         const character = this.board[coord[0] as number]![coord[1] as number]
 
         if (character === '.') {
-          this.board[coord[0] as number]![coord[1] as number] = '#'
+          printBoard[coord[0] as number]![coord[1] as number] = '#'
         }
       }
-    }
 
-    console.log(this.board.map(row => row.join(' ')))
+      console.log(printBoard.map(row => row.join(' ')))
+    } else {
+      console.log(this.board.map(row => row.join(' ')))
+    }
   }
 }
