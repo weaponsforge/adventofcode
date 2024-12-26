@@ -63,7 +63,7 @@ export class Disk {
    * @returns {string} linear string/text version of the `this.map[]` character array
    */
   getGrid (map?: string[]): string {
-    if (map?.length ?? this.map.length <= this.maxArrayToPrintLength) {
+    if ((map?.length ?? this.map.length) <= this.maxArrayToPrintLength) {
       return (map ?? this.map).join('') + '\n'
     }
 
