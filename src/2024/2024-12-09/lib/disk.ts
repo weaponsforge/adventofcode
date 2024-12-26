@@ -1,6 +1,6 @@
 /**
  * @class Disk
- * @description Object that provides common disk-like utility processing methods and stores processed data
+ * @description Object that provides common disk-like utility processing methods and stores processed data.
  */
 export class Disk {
   /** 1-dimensional character array conversion of a disk map string */
@@ -22,7 +22,7 @@ export class Disk {
   }
 
   /**
-   * Converts a disk map text into a character map, storing it in the `this.map[]` string array
+   * Converts files and spaces disk text representation into a character map, storing it in the `this.map[]` string array
    * @param {string} diskMapText Series of numbers representing an alternating file and disk space blocks
    * @returns {string[]} Character array conversion of a disk map string
    */
@@ -45,7 +45,7 @@ export class Disk {
   }
 
   /**
-   * Calculates the check sum of a fragmented disk files and spaces text map
+   * Calculates the checksum of fragmented or defragmented disk files and spaces text map
    * @param {string[]} [compactFileText] (Optional) Compacted disk map resulting from the `this.defragmentation()` function. Processes the local `this.compactMap[]` data if parameter is not provided.
    * @returns {number} Check sum - sum of file block IDs multiplied with their positions
    */
@@ -58,7 +58,7 @@ export class Disk {
   }
 
   /**
-   * Joins the `this.map[]` disk and spaces character array into a string format if its less than `this.maxArrayToPrintLength`
+   * Joins the `this.map[]` disk and spaces character array into a string format if it is less than `this.maxArrayToPrintLength`
    * @param {string} [map] (Optional) Character string array similar to `this.map[]`. Uses the `this.map[]` array by default.
    * @returns {string} linear string/text version of the `this.map[]` character array
    */
@@ -71,7 +71,7 @@ export class Disk {
   }
 
   /**
-   * Joins the `this.compactMap[]` "compact" disk and spaces character array into a string format if its less than `this.maxArrayToPrintLength`
+   * Joins the `this.compactMap[]` "compact" disk and spaces character array into a string format if it is less than `this.maxArrayToPrintLength`
    * @param {string} [map] (Optional) Character string array similar to `this.map[]`. Uses the `this.compactMap[]` array by default.
    * @returns {string} linear string/text version of the `this.compactMap[]` character array
    */

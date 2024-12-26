@@ -20,8 +20,8 @@ export class CompactDisk extends Disk {
   }
 
   /**
-   * Moves file blocks one character at a time from the right to the left-most free disk spaces of a disk character map,
-   * Storing the result in the `this.compactMap[]` and returning the result.
+   * Moves file blocks one character at a time from the right to the left-most free disk spaces of
+   * a disk character map, storing the result in the `this.compactMap[]` and returning the result.
    * @param {CompactParams} params - Parameters for input map string array.
    * @returns {string[]} Array of defragmented files and spaces blocks
    */
