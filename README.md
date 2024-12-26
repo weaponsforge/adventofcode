@@ -17,6 +17,7 @@ The codes are structured in a way that discusses and walks through the solution 
 - Day 6: Guard Gallivant [[link]](/src/2024/2024-12-06/README.md)
 - Day 7: Bridge Repair [[link]](/src/2024/2024-12-07/README.md)
 - Day 8: Resonant Collinearity [[link]](/src/2024/2024-12-08/README.md)
+- Day 9: Disk Fragmenter [[link]](/src/2024/2024-12-09/README.md)
 
 </details>
 

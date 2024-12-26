@@ -1,9 +1,5 @@
 import { Disk } from './disk.js'
-
-interface CompactParams {
-  charMap?: string[];
-  printLog? : boolean;
-}
+import type { CompactParams } from './types.js'
 
 /**
  * @class CompactDisk
@@ -16,20 +12,22 @@ export class CompactDisk extends Disk {
    * Creates an instance of the `CompactDisk` class
    * @constructor
    * @param {string} diskMapText Series of numbers representing an alternating file and disk space blocks
+   * @param {boolean} printLog Flag to display the step-by-step file movement on screen. Defaults to `false`
    */
   constructor(diskMapText: string, printLog: boolean = false) {
     super(diskMapText)
-    this.compactFileDisk({ printLog })
+    this.defragmentation({ printLog })
   }
 
   /**
-   * Moves file blocks one character at a time from the right to the left-most free disk spaces of a disk character map.
-   * @param {string[]} [charMap] (Optional) Character mapping conversion of a disk map. Processes the local `this.map[]` if parameter is not provided.
-   * @param {boolean} printLog Flag to display the step-by-step file movement on screen. Defaults to `false`
-   * @returns {string} Compacted disk character array
+   * Moves file blocks one character at a time from the right to the left-most free disk spaces of a disk character map,
+   * Storing the result in the `this.compactMap[]` and returning the result.
+   * @param {CompactParams} params - Parameters for input map string array.
+   * @returns {string[]} Array of defragmented files and spaces blocks
    */
-  compactFileDisk (params: CompactParams): string[] {
+  defragmentation (params: CompactParams): string[] {
     const map: string[] = [...(params?.charMap || this.map)]
+
     let charIndex = map.length - 1
     let logs = ''
 
@@ -45,9 +43,10 @@ export class CompactDisk extends Disk {
       const dotIndex = map.indexOf('.')
 
       if (params?.printLog) {
-        logs += map.join('') + '\n'
+        logs += this.getGrid(map)
       }
 
+      // Swap file and space locations one unit at a time
       if (dotIndex !== -1) {
         map[dotIndex] = map[charIndex] ?? '.'
         map[charIndex] = '.'
@@ -57,7 +56,7 @@ export class CompactDisk extends Disk {
     }
 
     if (params?.printLog) {
-      logs += map.join('')
+      logs += this.getGrid(map)
       console.log(logs)
     }
 
