@@ -29,4 +29,4 @@ Visit the Advent of Code website for more information on this puzzle at:
 
 - **`findDiskBlocks()`** - Finds and initializes the array indices of file blocks and spaces, noting their lengths for tracking
 - **`findFreeSpaceBlock()`** - Finds the starting index of a group of free space blocks that can contain the whole length of a `FileBlock` in the `this.map[]` array from the `this.spaceBlocks` block map
-- **`defragmentation()`** - Moves whole file blocks from the right to the left-most free disk spaces that can contain the whole file blocks, Storing the result in the this.compactMap[] and returning the result.
+- **`defragmentation()`** - Moves whole file blocks from the right to the left-most free disk spaces that can contain the whole file blocks, Storing the result in the `this.compactMap[]` and returning the result.

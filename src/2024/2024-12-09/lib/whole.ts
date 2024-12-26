@@ -55,7 +55,7 @@ export class WholeDisk extends Disk {
   }
 
   /**
-   * Moves whole file blocks from the right to the left-most free disk spaces that can contain the whole file blocks, Storing the result in the `this.compactMap[]` and returning the result.
+   * Finds the starting index of a group of free space blocks that can contain the whole length of a `FileBlock` in the `this.map[]` array from the `this.spaceBlocks` block map.
    * @param {number} fileBlockLength Length of a `FileBlock` - number of spaces it occupies in the `this.map[]` array
    * @param {number} fileStartIndex Starting index of a `FileBlock` in the `this.map[]` array
    * @returns {number} Start array index in the `this.map[]` of a valid free space that can contain the whole length of a file block
