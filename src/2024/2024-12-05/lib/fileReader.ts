@@ -1,5 +1,5 @@
 import path from 'path'
-import { currentDirectory, readFile } from '@/utils/file.js'
+import { directory, readFile } from '@/utils/file.js'
 import { uniformArrayElements } from '@/utils/arrays.js'
 
 export type Rules = Record<number, number[]>
@@ -15,8 +15,8 @@ export type QuizData = {
  * @returns {QuizData} Formatted data
  */
 export const fileReader = (fileName: string): QuizData => {
-  const directory = currentDirectory(import.meta.url)
-  const file = readFile(path.join(directory, '..', fileName))
+  const fir = directory(import.meta.url)
+  const file = readFile(path.join(fir, '..', fileName))
 
   const segments = file.split('\n\n')
 

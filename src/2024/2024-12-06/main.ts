@@ -1,12 +1,12 @@
 import path from 'path'
 import { readAOCInputFile, AOC_OUTPUT_TYPE } from '@/utils/aocInputFile.js'
-import { currentDirectory } from '@/utils/file.js'
+import { directory } from '@/utils/file.js'
 
 import { guardController } from './lib/guardController.js'
 import { findObstructionPositions } from './lib/guardControllerLoop.js'
 
 const file = readAOCInputFile({
-  filePath: path.join(currentDirectory(import.meta.url), 'input.txt'),
+  filePath: path.join(directory(import.meta.url), 'input.txt'),
   type: AOC_OUTPUT_TYPE.STRING_ARRAY_2D
 }) as string [][]
 

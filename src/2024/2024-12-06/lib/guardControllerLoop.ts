@@ -106,14 +106,12 @@ export const findObstructionPositions = (data: string[][], printGrid: boolean = 
       }
 
       const xData: string[][] = structuredClone(data)
-      const r = xData[y] as string[]
-      r[x] = '#'
+      xData[y]![x] = '#'
 
       const isLoop = gridHasInfiniteLoop(xData)
 
       if (isLoop) {
-        const e = extras[y] as string[]
-        e[x] = 'O'
+        extras[y]![x] = '0'
         loopCount += 1
       }
     }
