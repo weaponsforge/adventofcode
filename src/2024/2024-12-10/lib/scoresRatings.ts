@@ -31,11 +31,12 @@ const findPaths = (pointVector: PointDirection, data: number[][], isRating: bool
       if (step === undefined) continue
       const pt = getCoordinateSymbol(step, data)
 
-      // Count unique ending 9's that match with the starting 0
       if (pt.symbol === 9) {
         if (isRating) {
+          // Rating: count all trails ending in 9's
           scores[activeZeroIndex]?.push(pt.coordinate)
         } else {
+          // Scores: count unique ending 9's that match with the starting 0
           if (!scores[activeZeroIndex]!.includes(pt.coordinate)) {
             scores[activeZeroIndex]?.push(pt.coordinate)
           }
