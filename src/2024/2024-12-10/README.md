@@ -13,4 +13,4 @@ Visit the Advent of Code website for more information on this puzzle at:
 
 ### `scores.ts`
 
-- Finds valid hiking trails (trailheads) from a point coordinate in a 2D array starting `0` and ending in `9` symbol and calculates the scores for each trailhead.
+- Finds valid hiking trails (trailheads) from a point coordinate in a 2D array starting with `0` and ending in `9` symbol and calculates the scores for each trailhead.
