@@ -1,6 +1,19 @@
 import type { Point } from '@/2024/2024-12-08/lib/types.js'
 import type { GridDimensions } from '@/2024/2024-12-06/lib/grid.types.js'
-import type { PointSteps } from './types.js'
+import type { GridCoordinateSymbol, PointSteps } from './types.js'
+
+/**
+ * Converts a 2D `Point` point object to string and returns its value from the 2D array
+ * @param {Point} point - (y,x) coordinatate in the 2D array
+ * @param {number[][]} data - 2D number array containing hiking trail data
+ * @returns {GridCoordinateSymbol} Returns the `poiint` (x,y) coordinate expressed in string and its value
+ */
+export const getCoordinateSymbol = (point: Point, data: number[][]): GridCoordinateSymbol => {
+  return {
+    coordinate: `${point!.x},${point!.y}`,
+    symbol: data[point!.y]![point!.x] as number
+  }
+}
 
 /**
  * Finds the (y,x) coordinates of starting positions in a trailhead grid

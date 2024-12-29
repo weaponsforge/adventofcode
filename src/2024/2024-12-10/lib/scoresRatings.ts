@@ -1,33 +1,25 @@
 import type { Point } from '../../2024-12-08/lib/types.js'
-import type { GridCoordinateSymbol, PointSteps, PointDirection, TrailScores } from './types.js'
+import type { InputOptions, PointSteps, PointDirection, TrailScores } from './types.js'
 
-import { findZeroCoordinatePositions, findValidSteps } from './utils.js'
+import {
+  findValidSteps,
+  findZeroCoordinatePositions,
+  getCoordinateSymbol
+} from './utils.js'
 
 // List of trailhead scores
 const scores: Record<string, string[]> = {}
 let activeZeroIndex = ''
 
 /**
- * Converts a 2D `Point` point object to string and returns its value from the 2D array
- * @param {Point} point - (y,x) coordinatate in the 2D array
- * @param {number[][]} data - 2D number array containing hiking trail data
- * @returns {GridCoordinateSymbol} Returns the `poiint` (x,y) coordinate expressed in string and its value
- */
-export const getCoordinateSymbol = (point: Point, data: number[][]): GridCoordinateSymbol => {
-  return {
-    coordinate: `${point!.x},${point!.y}`,
-    symbol: data[point!.y]![point!.x] as number
-  }
-}
-
-/**
  * Finds valid hiking trails (trailheads) from a point coordinate in a 2D array starting `0` and ending in `9` symbols and
  * calculates the scores for each trailhead.
  * @param {PointDirection} pointVector - Point (y,x) coordinate in a 2D array with a list of valid coordinates from its location.
  * @param {number[][]} data - 2D number array containing hiking trail data
+ * @param {boolean} isRating - If `true`, calculates the trailhead ratings instead of the trailhead scores. Defaults to `false`
  * @returns {void}
  */
-const findPaths = (pointVector: PointDirection, data: number[][]) => {
+const findPaths = (pointVector: PointDirection, data: number[][], isRating: boolean = false) => {
   const grid = {
     length: data.length, width: data[0]!.length
   }
@@ -41,8 +33,12 @@ const findPaths = (pointVector: PointDirection, data: number[][]) => {
 
       // Count unique ending 9's that match with the starting 0
       if (pt.symbol === 9) {
-        if (!scores[activeZeroIndex]!.includes(pt.coordinate)) {
+        if (isRating) {
           scores[activeZeroIndex]?.push(pt.coordinate)
+        } else {
+          if (!scores[activeZeroIndex]!.includes(pt.coordinate)) {
+            scores[activeZeroIndex]?.push(pt.coordinate)
+          }
         }
       }
 
@@ -52,7 +48,7 @@ const findPaths = (pointVector: PointDirection, data: number[][]) => {
         validSteps: findValidSteps(step as Point, grid, data) as PointSteps[]
       }
 
-      findPaths(point, data)
+      findPaths(point, data, isRating)
     }
   }
 }
@@ -61,12 +57,12 @@ const findPaths = (pointVector: PointDirection, data: number[][]) => {
  * Finds valid trailheads and counts each trailhead score.
  * @param {number[][]} data - 2D number array containing hiking trail data
  * @param {boolean} [printLog] - Flag to display the processing and total score logs
+ * @typedef {InputOptions} params - Input and logging parameter options
+ * @param {boolean} [params.printLog] - (Optional) Flag to display the miscellaneous data processing logs.
+ * @param {boolean} [params.isRating] - (Optional) Flag to calculate the trailhead rating instead of the score.
  * @returns {TrailScores}
  */
-export const countTrailScores = (
-  data: number[][],
-  printLog: boolean = false
-): TrailScores => {
+export const countTrailScores = (data: number[][], params?: InputOptions): TrailScores => {
   // Find starting positions
   const starts = findZeroCoordinatePositions(data)
 
@@ -85,7 +81,7 @@ export const countTrailScores = (
     activeZeroIndex = pt.coordinate
     scores[activeZeroIndex] = []
 
-    findPaths(initStep, data)
+    findPaths(initStep, data, params?.isRating)
   }
 
   const total = Object
@@ -93,7 +89,7 @@ export const countTrailScores = (
     .map(x => x.length)
     .reduce((sum, item) => sum += item, 0)
 
-  if (printLog) {
+  if (params?.printLog) {
     for (const key in scores) {
       console.log(`[${key}]: ${scores[key]?.length} score`)
     }
