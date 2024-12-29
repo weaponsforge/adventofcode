@@ -22,6 +22,10 @@ export const quiz20241209_01 = () => {
   console.log('Compacted disk checksum:', sum)
 }
 
+/**
+ * Part 2/2 of the 2024-12-09 quiz
+ * Counts the check sum of a defragment disk whose file blocks were moved to empty spaces as whole blocks
+ */
 export const quiz20241209_02 = () => {
   const disk = new WholeDisk(input, true)
   const sum = disk.calculateDiskChecksum()

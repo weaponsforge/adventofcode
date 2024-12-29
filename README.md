@@ -101,7 +101,7 @@ Each Advent of Code (AOC) event quiz has its folder under **`"/src/<YEAR>/<YYYY-
 Using Node
 
 1. (Optional) Replace the values of specific `input.txt` in the `"/src/<YEAR>/<YYYY-MM-DD>"` directories with actual AOC input.
-2. Run a non-test TypeScript file inside the **/src** directory. For example:
+2. Run a non-test TypeScript file inside the **/src** directory from the project's _**"root directory"**_. For example:
    ```
    npx vite-node src/sample/sample.ts
    ```
