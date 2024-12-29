@@ -10,7 +10,7 @@ type CurrentItem = {
 }
 
 /**
- * Finds the next appropriate array index to swap places with the incorrectly placed current item accoring to the "rules"
+ * Finds the next appropriate array index to swap places with the incorrectly placed current item according to the "rules"
  * @param rules {Rules} Object containing parsed and formatted rules and updates data
  * @param restItems {number[]} "updates" array items content
  * @param currentItem {CurrentItem} Object containing the "current" item data in focus: value and array index
@@ -44,30 +44,32 @@ export const fixOrdering = (rules: Rules, unorderedItems: number[]): number[] =>
     throw new Error('Invalid item/s')
   }
 
+  let currentItem: number = -2
+
+  // Swaps incorrectly placed items with target items in the array
+  const swapItems = (activeItem: CurrentItem, activeIndex: number) => {
+    const indexToSwap = nextHotSwapIndex(
+      rules,
+      unorderedItems,
+      activeItem
+    )
+
+    const temp = unorderedItems[indexToSwap] as number
+    unorderedItems[indexToSwap] = activeItem.value
+    unorderedItems[activeIndex] = temp
+    currentItem = temp
+
+    fixOrdering(rules, unorderedItems)
+  }
+
   for (let i = 0; i < unorderedItems.length - 1; i += 1) {
-    let currentItem = unorderedItems[i] as number
+    currentItem = unorderedItems[i] as number
     const currentItemData = { value: currentItem, index: i }
-
-    // Swaps incorrectly placed items with target items in the array
-    const swapItems = () => {
-      const indexToSwap = nextHotSwapIndex(
-        rules,
-        unorderedItems,
-        currentItemData
-      )
-
-      const temp = unorderedItems[indexToSwap] as number
-      unorderedItems[indexToSwap] = currentItem
-      unorderedItems[i] = temp
-      currentItem = temp
-
-      fixOrdering(rules, unorderedItems)
-    }
 
     // Correct "update" item should have en entry in the "rules" object
     // Swap places with other items if its incorrect
     if (rules[currentItem] === undefined) {
-      swapItems()
+      swapItems(currentItemData, i)
     }
 
     // Get the rest of items after the current item for comparison
@@ -76,7 +78,7 @@ export const fixOrdering = (rules: Rules, unorderedItems: number[]): number[] =>
     // Correct item's "rule" should have the after-item entries
     // Swap places with other items if its incorrect
     if (!afterItems.every(item => rules[currentItem]?.includes(item))) {
-      swapItems()
+      swapItems(currentItemData, i)
     }
   }
 

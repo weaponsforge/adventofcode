@@ -1,5 +1,5 @@
 import path from 'path'
-import { readFile, currentDirectory } from '@/utils/file.js'
+import { readFile, directory } from '@/utils/file.js'
 
 export type arrayLists = {
   list1: string[];
@@ -12,8 +12,8 @@ export type arrayLists = {
  */
 export const fileReader = (): arrayLists => {
   // Read quiz input file
-  const directory = currentDirectory(import.meta.url)
-  const file = readFile(path.join(directory, '..', 'input.txt'))
+  const dir = directory(import.meta.url)
+  const file = readFile(path.join(dir, '..', 'input.txt'))
   const pairs: string[] = file.split('\n')
 
   const list1: string[] = []

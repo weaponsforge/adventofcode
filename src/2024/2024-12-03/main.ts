@@ -1,9 +1,9 @@
 import path from 'path'
-import { currentDirectory, readFile } from '@/utils/file.js'
+import { directory, readFile } from '@/utils/file.js'
 import { extractMultiply, extractMultiplyCondition } from './lib/extractMultiply.js'
 
-const directory = currentDirectory(import.meta.url)
-const input = readFile(path.join(directory, 'input.txt'))
+const dir = directory(import.meta.url)
+const input = readFile(path.join(dir, 'input.txt'))
 
 /**
  * Part 1/2 of the 2024-12-03 quiz

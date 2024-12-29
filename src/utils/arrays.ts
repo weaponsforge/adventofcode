@@ -20,14 +20,18 @@ export const arrangeArray = (order: ARRAY_ORDERING) =>
   }
 
 /**
- * Checks if array elements have the same type and has no null or undefined values
+ * Checks if array elements have the same type using `typeof` and has no null or undefined values
  * @param items {S[]} array of elements
- * @param type {T} type name of the elements inside the `items` array
+ * @param type {T} primitive type name of the elements inside the array (e.g., number, string, boolean)
  * @returns {boolean} Flag indicating if all array elements have the same type
  */
-export const uniformArrayElements = <S, T>(items: S[], type: T): boolean => {
+export const uniformArrayElements = <S, T>(
+  items: S[],
+  type: T
+): boolean => {
   return (
-    items.filter(value => typeof value === type).length === items.length
+    items.filter(value => typeof value === type)
+      .length === items.length
   )
 }
 

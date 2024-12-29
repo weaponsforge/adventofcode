@@ -1,11 +1,11 @@
 import path from 'path'
-import { currentDirectory, readFile } from '@/utils/file.js'
+import { directory, readFile } from '@/utils/file.js'
 import { wordCount } from './lib/wordCount.js'
 import { countMASword } from './lib/xmasCount.js'
 
-const directory = currentDirectory(import.meta.url)
+const dir = directory(import.meta.url)
 
-const data: string[][] = readFile(path.join(directory, 'input.txt'))
+const data: string[][] = readFile(path.join(dir, 'input.txt'))
   .split('\n')
   .map(row => row.split(''))
 
