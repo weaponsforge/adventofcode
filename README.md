@@ -19,6 +19,7 @@ The codes are structured in a way that discusses and walks through the solution 
 - Day 8: Resonant Collinearity [[link]](/src/2024/2024-12-08/README.md)
 - Day 9: Disk Fragmenter [[link]](/src/2024/2024-12-09/README.md)
 - Day 10: Hoof It [[link]](/src/2024/2024-12-10/README.md)
+- Day 11: Plutonian Pebbles [[link]](/src/2024/2024-12-11/README.md)
 
 </details>
 
