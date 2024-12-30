@@ -2,7 +2,7 @@
 import { readFile } from './file.js'
 
 /**
- * Definitions for the privimite types (`AOCOutputType`) in which to convert the AoC quiz input
+ * Definitions of the privimite types (`AOCFileOutput`) in which to convert the AoC quiz input text file.
  * - `STRING` - String of text: `string`
  * - `STRING_ARRAY`- Array of strings: `string[]`
  * - `STRING_ARRAY_2D` - 2D array of strings: `string[][]`
@@ -19,10 +19,11 @@ export enum AOC_OUTPUT_TYPE {
 
 /**
  * Input parameters indicating details about the AoC quiz input file.
- * @para,
+ * @param {string} filePath - Full file path to and input text file.
+ * @param {AOC_OUTPUT_TYPE} type - Type to convert the input text file. One of `AOC_OUTPUT_TYPE`.
+ * @param {delimiter} delimiter - String delimiter to `split()` between characters in the original text file. Defaults to none.
  */
-type FileInput = {
-  /** @param filePath {string} Full file path to input file */
+type AOCFileInput = {
   filePath: string;
   type: AOC_OUTPUT_TYPE;
   delimiter?: string;
@@ -31,19 +32,17 @@ type FileInput = {
 /**
  * Represents common primitive types in which to convert the AoC quiz input
  */
-type AOCOutputType = string | string[] | string[][] |
+type AOCFileOutput = string | string[] | string[][] |
   number[] | number[][]
 
 /**
- * Reads common AoC input text files and converts them into one of `AOCOutputType` for data processing.
- * @typedef {FileInput} param File input definitions
- * @param {string} param.filePath Full file path to an input text file
- * @param {AOC_OUTPUT_TYPE} param.type Type to convert the input text file. One of `AOC_OUTPUT_TYPE`.
- * @param {string} param.delimiter String delimiter to `split()` between characters in the original text file. Defaults to none.
- * @returns {AOCOutputType} Input text file converted into one of `AOCOutputType`
+ * Reads common AoC input text files and converts them into one of `AOCFileOutput` for data processing.
+ * @param {AOCFileInput} param File input definitions.
+ *  - See `AOCFileInput` type for detailed definitions of the properties.
+ * @returns {AOCFileOutput} Input text file converted into one of `AOCFileOutput`
  * @throws {Error}
  */
-export const readAOCInputFile = (param: FileInput): AOCOutputType => {
+export const readAOCInputFile = (param: AOCFileInput): AOCFileOutput => {
   const file = readFile(param.filePath)
   const delimiter = param?.delimiter ?? ''
 
