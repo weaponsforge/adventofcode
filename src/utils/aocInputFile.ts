@@ -19,7 +19,7 @@ export enum AOC_OUTPUT_TYPE {
 
 /**
  * Input parameters indicating details about the AoC quiz input file.
- * @param {string} filePath - Full file path to and input text file.
+ * @param {string} filePath - Full file path to an AoC input text file.
  * @param {AOC_OUTPUT_TYPE} type - Type to convert the input text file. One of `AOC_OUTPUT_TYPE`.
  * @param {delimiter} delimiter - String delimiter to `split()` between characters in the original text file. Defaults to none.
  */
@@ -64,7 +64,7 @@ export const readAOCInputFile = (param: AOCFileInput): AOCFileOutput => {
 
   case AOC_OUTPUT_TYPE.NUMBER_ARRAY:
     return file
-      .split('')
+      .split(delimiter)
       .map(Number) as number[] || []
 
   case AOC_OUTPUT_TYPE.NUMBER_ARRAY_2D:

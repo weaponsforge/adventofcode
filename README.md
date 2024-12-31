@@ -2,7 +2,9 @@
 
 This repository contains solutions and a local development environment for the [Advent of Code](https://adventofcode.com/) event puzzles using TypeScript/JavaScript.
 
-The codes are structured in a way that discusses and walks through the solution steps for the AoC quizzes rather than focusing on AoC's competitive programming.
+- The code repository structure follows a way that discusses and walks through the solution steps for the AoC quizzes rather than focusing on AoC's competitive programming.
+- The quizzes were solved for fun (unlocking the 2024 AoC Chrismas symbol 🎄) and brain exercise purposes. Therefore, no GPT or AI completion was used for solving, as advised on the AoC website.
+- These codes may get occasional optimization updates and solutions using other languages from time to time.
 
 ### 🎄 Advent of Code Quiz Information
 
@@ -67,6 +69,7 @@ It follows the directory structure:
 Each Advent of Code (AOC) event quiz has its folder under **`"/src/<YEAR>/<YYYY-MM-DD>"`** containing:
 - **/lib**: Folder containing main quiz solution logic
 - **input.txt**: Random quiz input
+   > _**INFO:** The sample quiz inputs were slightly altered from the original AoC input text and quiz samples as advised on their website_
 - **main.ts**: Main program entry point containing quiz answer(s) using random input
 - **sample.test.ts**: Minimal sample input with expected correct answers
 - **README.md**: Reference and other notes about the AOC quiz question
