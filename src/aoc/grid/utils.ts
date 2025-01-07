@@ -67,7 +67,7 @@ export const isOutOfBounds = (point: Point, gridMeta: GridDimensions): boolean =
 
 /**
  * Retrieves the four (4) diagonally aligned (y,x) coordinates and the symbol character from a `Point` in the grid.
- * Substitutes a `"*"` symbol character in the `PointSymbol.symbol`if the `point` is out of the grid bounds.
+ * Substitutes a `"*"` symbol character in the `PointSymbol.symbol` to coordinates out of the grid bounds.
  * @param {Point} point - (y,x) coordinate object in a 2D array grid
  * @param {string[][]} data - 2D string array input
  * @returns {PointSymbol[]} Array of `PointSymbol` with symbol characters.
@@ -96,7 +96,7 @@ export const getDiagonalNeighbors = (point: Point, data: string[][]): PointSymbo
 
 /**
  * Retrieves the four (4) horizontal/vertical aligned (y,x) coordinates and the symbol character from a `Point` in the grid.
- * Substitutes a `"*"` symbol character in the `PointSymbol.symbol`if the `point` is out of the grid bounds.
+ * Substitutes a `"*"` symbol character in the `PointSymbol.symbol` to coordinates out of the grid bounds.
  * @param {Point} point - (y,x) coordinate object in a 2D array grid
  * @param {string[][]} data - 2D string array input
  * @returns {PointSymbol[]} Array of `PointSymbol` with symbol characters.
