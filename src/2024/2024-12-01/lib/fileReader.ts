@@ -1,5 +1,5 @@
 import path from 'path'
-import { readFile, directory } from '@/utils/file.js'
+import { readFile, directory } from '@/aoc/file.js'
 
 export type arrayLists = {
   list1: string[];

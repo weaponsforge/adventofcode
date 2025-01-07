@@ -1,5 +1,5 @@
 import path from 'path'
-import { directory, readFile } from '@/utils/file.js'
+import { directory, readFile } from '@/aoc/file.js'
 import { extractMultiply, extractMultiplyCondition } from './lib/extractMultiply.js'
 
 const dir = directory(import.meta.url)

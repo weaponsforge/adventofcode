@@ -1,7 +1,7 @@
 import type { Point } from '@/2024/2024-12-08/lib/types.js'
 import type { IllegalCoordinateParams, NeighborPoint } from './types.js'
 
-import { getGridDimensions } from '@/utils/grid/utils.js'
+import { getGridDimensions } from '@/aoc/grid/utils.js'
 import { isOutOfBounds } from '@/2024/2024-12-10/lib/utils.js'
 
 /**
@@ -109,7 +109,7 @@ export const isDiagonal = (p1: Point, p2: Point): boolean => {
 }
 
 /**
- * Counts the "inner" corners from groups of valid L-shaped `Points` that originate from a `Point` coordinate.
+ * Counts the "inner" corners from groups of valid L-shaped `Points` that has the `point` parameter coordinate as its center
  * @param {Point} point - Origin (y,x) coordinate object in a 2D array grid
  * @param {string} symbol - Character to check in the `point` coordinate.
  * @param {string[][]} data - 2D string array input

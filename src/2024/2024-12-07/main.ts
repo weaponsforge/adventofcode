@@ -1,6 +1,6 @@
 import path from 'path'
-import { AOC_OUTPUT_TYPE, readAOCInputFile } from '@/utils/aocInputFile.js'
-import { directory } from '@/utils/file.js'
+import { AOC_OUTPUT_TYPE, readAOCInputFile } from '@/aoc/aocInputFile.js'
+import { directory } from '@/aoc/file.js'
 
 import { totalCalibrationResult } from './lib/totalCalibration.js'
 import { totalCalibrationConcat } from './lib/totalCalibrationConcat.js'

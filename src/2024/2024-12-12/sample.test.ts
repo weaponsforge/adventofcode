@@ -1,8 +1,8 @@
 import { test, expect } from 'vitest'
-import { AOC_OUTPUT_TYPE } from '@/utils/aocInputFile.js'
-import { file } from '@/utils/file.js'
+import { AOC_OUTPUT_TYPE } from '@/aoc/aocInputFile.js'
+import { file } from '@/aoc/file.js'
 
-import { readAOCInputFileAsync } from '@/utils/aocInputFile.js'
+import { readAOCInputFileAsync } from '@/aoc/aocInputFile.js'
 
 import { Garden } from './lib/garden.js'
 import { WholesaleGarden } from './lib/wholesale.js'

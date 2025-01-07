@@ -29,7 +29,7 @@ Visit the Advent of Code website for more information on this puzzle at:
 - `getDiagonalNeighbors()` - Retrieves the four (4) diagonally-aligned (y,x) coordinates and the symbol character from a `Point` in the grid. Substitutes a `"*"` symbol character in the `NeighborPoint.symbol`if the `point` is out of the grid bounds.
 - `getCrossNeighbors()` - Retrieves the four (4) horizontal/vertical aligned (y,x) coordinates and the symbol character from a `Point` in the grid. Substitutes a `"*"` symbol character in the `NeighborPoint.symbol`if the `point` is out of the grid bounds.
 - `isDiagonal()` - Checks if two (2) `Points` are diagonally-aligned
-- `innerCorners()` - Counts the "inner" corners from groups of valid L-shaped `Points` that originate from a `Point` coordinate.
+- `innerCorners()` - Counts the "inner" corners from groups of valid L-shaped `Points` that has the `point` parameter coordinate as its center
 
 
 ## Notes

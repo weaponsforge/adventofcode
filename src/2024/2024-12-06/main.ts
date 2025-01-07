@@ -1,6 +1,6 @@
 import path from 'path'
-import { readAOCInputFile, AOC_OUTPUT_TYPE } from '@/utils/aocInputFile.js'
-import { directory } from '@/utils/file.js'
+import { readAOCInputFile, AOC_OUTPUT_TYPE } from '@/aoc/aocInputFile.js'
+import { directory } from '@/aoc/file.js'
 
 import { guardController } from './lib/guardController.js'
 import { findObstructionPositions } from './lib/guardControllerLoop.js'

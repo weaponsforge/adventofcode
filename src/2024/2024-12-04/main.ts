@@ -1,5 +1,5 @@
 import path from 'path'
-import { directory, readFile } from '@/utils/file.js'
+import { directory, readFile } from '@/aoc/file.js'
 import { wordCount } from './lib/wordCount.js'
 import { countMASword } from './lib/xmasCount.js'
 

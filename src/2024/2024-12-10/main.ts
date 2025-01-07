@@ -1,6 +1,6 @@
 
-import { readAOCInputFile, AOC_OUTPUT_TYPE } from '@/utils/aocInputFile.js'
-import { file } from '@/utils/file.js'
+import { readAOCInputFile, AOC_OUTPUT_TYPE } from '@/aoc/aocInputFile.js'
+import { file } from '@/aoc/file.js'
 
 import { countTrailScores } from './lib/scoresRatings.js'
 

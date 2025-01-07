@@ -1,5 +1,5 @@
 import type { QuizData, Rules } from './fileReader.js'
-import { uniformArrayElements, arrayMiddleIndex } from '@/utils/arrays.js'
+import { uniformArrayElements, arrayMiddleIndex } from '@/aoc/arrays.js'
 
 /**
  * Checks if an "update" list is correct according to defined "rules"

@@ -1,7 +1,7 @@
 import type { Point } from '@/2024/2024-12-08/lib/types.js'
 
 import { isOutOfBounds } from '@/2024/2024-12-10/lib/utils.js'
-import { getGridDimensions } from '@/utils/grid/utils.js'
+import { getGridDimensions } from '@/aoc/grid/utils.js'
 import { getCrossNeighbors, innerCorners, isDiagonal } from './utils.js'
 import type { GardenRegionSides } from './types.js'
 
