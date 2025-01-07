@@ -51,8 +51,6 @@ Visit the Advent of Code website for more information on this puzzle at:
 5. Thoughts/tips across the subreddit/google:
    - no. of corners = no. of sides 😉
 
-```
-
 ## References
 
 <sup>[[1]](https://en.wikipedia.org/wiki/Flood_fill)</sup> Flood Fill Algorithm

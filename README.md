@@ -22,7 +22,7 @@ This repository contains solutions and a local development environment for the [
 - Day 9: Disk Fragmenter [[link]](/src/2024/2024-12-09/README.md)
 - Day 10: Hoof It [[link]](/src/2024/2024-12-10/README.md)
 - Day 11: Plutonian Pebbles [[link]](/src/2024/2024-12-11/README.md)
-- Day 12: garden Groups [[link]](/src/2024/2024-12-12/README.md)
+- Day 12: Garden Groups [[link]](/src/2024/2024-12-12/README.md)
 
 </details>
 
