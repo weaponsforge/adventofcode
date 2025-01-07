@@ -32,7 +32,7 @@ type AOCFileInput = {
 /**
  * Represents common primitive types in which to convert the AoC quiz input
  */
-type AOCFileOutput = string | string[] | string[][] |
+export type AOCFileOutput = string | string[] | string[][] |
   number[] | number[][]
 
 /**
@@ -75,4 +75,20 @@ export const readAOCInputFile = (param: AOCFileInput): AOCFileOutput => {
   default:
     throw new Error('Unsupported type')
   }
+}
+
+/**
+ * Reads common AoC input text files asynchronously and converts them into one of `AOCFileOutput` for data processing.
+ * @param {AOCFileInput} param File input definitions.
+ *  - See `AOCFileInput` type for detailed definitions of the properties.
+ * @returns {Promise<T>} Input text file converted into one of `AOCFileOutput`
+ */
+export const readAOCInputFileAsync = <T>(param: AOCFileInput): Promise<T> => {
+  return new Promise<T>((resolve, reject) => {
+    try {
+      resolve(readAOCInputFile(param) as T)
+    } catch (error) {
+      reject(error)
+    }
+  })
 }
