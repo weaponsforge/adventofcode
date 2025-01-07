@@ -22,8 +22,8 @@ export const getCoordinateSymbol = (point: Point, data: number[][] | string[][])
 }
 
 /**
- * Retrieves the length and width of a 2D string or number array
- * @param {string[][] | number[][]} data - 2D string or number array
+ * Retrieves the length and width of a generic 2D array
+ * @param {T[][] | T[][]} data - 2D array, usually `string[][]`, `number[][]` or others.
  * @returns {GridDimensions} Object containig the length and width of the 2D array
  */
 export const getGridDimensions = <T>(data: T[][]): GridDimensions => {
