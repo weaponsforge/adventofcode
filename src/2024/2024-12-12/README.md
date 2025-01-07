@@ -11,8 +11,8 @@ Visit the Advent of Code website for more information on this puzzle at:
 
 **Garden** class
 - A set of methods and properties for calculating Garden, Region, and Plots data
-- `Garden.calculatePlot()` - Calculates the per-plot perimeter and total area of all garden regions in a 2D grid, each defined by an initial symbol at a starting (y,x) coordinate.
-- `Garden.calculateFencePrice()` - Calculates the total fencing price of all regions in a garden per connected plot using the formula: area * perimeter (per plot).
+- **`calculatePlot()`** - Calculates the per-plot perimeter and total area of all garden regions in a 2D grid, each defined by an initial symbol at a starting (y,x) coordinate.
+- **`calculateFencePrice()`** - Calculates the total fencing price of all regions in a garden per connected plot using the formula: area * perimeter (per plot).
 
 ### `wholesale.ts`
 
