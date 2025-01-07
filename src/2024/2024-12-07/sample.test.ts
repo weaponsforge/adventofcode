@@ -1,8 +1,8 @@
 import path from 'path'
 import { test, expect } from 'vitest'
 
-import { readAOCInputFile, AOC_OUTPUT_TYPE } from '@/utils/aocInputFile.js'
-import { directory } from '@/utils/file.js'
+import { readAOCInputFile, AOC_OUTPUT_TYPE } from '@/aoc/file/aocfile.js'
+import { directory } from '@/aoc/file/utils.js'
 
 import { totalCalibrationResult } from './lib/totalCalibration.js'
 import { totalCalibrationConcat } from './lib/totalCalibrationConcat.js'

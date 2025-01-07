@@ -1,9 +1,9 @@
-import type { Point } from '@/2024/2024-12-08/lib/types.js'
-
-import { isOutOfBounds } from '@/2024/2024-12-10/lib/utils.js'
-import { getGridDimensions } from '@/utils/grid/utils.js'
-import { getCrossNeighbors, innerCorners, isDiagonal } from './utils.js'
+import type { Point } from '@/aoc/point/types.js'
 import type { GardenRegionSides } from './types.js'
+
+import { getCrossNeighbors, getGridDimensions, isOutOfBounds } from '@/aoc/grid/utils.js'
+import { isDiagonal } from '@/aoc/point/utils.js'
+import { innerCorners } from './utils.js'
 
 /**
  * @class WholesaleGarden
@@ -46,7 +46,7 @@ export class WholesaleGarden {
         corners += 2 * Math.floor(invalidPoints.length / 2)
       }
 
-      // Diagonally-aligned other symbols (if only 2) count as a corner
+      // diagonally aligned other symbols (if only 2) count as a corner
       if (invalidPoints.length === 2) {
         if (isDiagonal(invalidPoints[0] as Point, invalidPoints[1] as Point)) {
           corners += 1

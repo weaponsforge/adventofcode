@@ -48,7 +48,7 @@ It follows the directory structure:
 > [!NOTE]
 > 📂 dist<br>
 > 📂 src<br>
-> └─ 📂 utils<br>
+> └─ 📂 aoc<br>
 > └─ 📂 sample<br>
 > └─ 📂 2024<br>
 > └─── 📂 2024-12-01<br>
@@ -77,7 +77,7 @@ Each Advent of Code (AOC) event quiz has its folder under **`"/src/<YEAR>/<YYYY-
 
 #### Other Items
 
-- **/src/utils**: Folder containing generic utility helper functions
+- **/src/aoc**: 🗃️ Folder containing generic utility and common AoC helper functions
 - **/src/dist**: Folder containing the JavaScript files compiled from TypeScript (not committed to the repository)
 - **/src/sample**: Miscellaneous random examples
 - **/src/index.ts**: Exports all solutions to AOC quiz answer functions

@@ -1,8 +1,8 @@
 import path from 'path'
 import { test, expect } from 'vitest'
 
-import { AOC_OUTPUT_TYPE, readAOCInputFile } from '@/utils/aocInputFile.js'
-import { directory } from '@/utils/file.js'
+import { AOC_OUTPUT_TYPE, readAOCInputFile } from '@/aoc/file/aocfile.js'
+import { directory } from '@/aoc/file/utils.js'
 
 import { CompactDisk } from './lib/compact.js'
 import { WholeDisk } from './lib/whole.js'

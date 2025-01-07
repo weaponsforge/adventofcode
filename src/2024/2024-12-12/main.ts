@@ -1,5 +1,5 @@
-import { AOC_OUTPUT_TYPE, readAOCInputFile } from '@/utils/aocInputFile.js'
-import { file } from '@/utils/file.js'
+import { AOC_OUTPUT_TYPE, readAOCInputFile } from '@/aoc/file/aocfile.js'
+import { file } from '@/aoc/file/utils.js'
 
 import { Garden } from './lib/garden.js'
 import { WholesaleGarden } from './lib/wholesale.js'

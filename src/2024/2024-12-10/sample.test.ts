@@ -1,7 +1,7 @@
 import { test, expect } from 'vitest'
 
-import { AOC_OUTPUT_TYPE, readAOCInputFile } from '@/utils/aocInputFile.js'
-import { file } from '@/utils/file.js'
+import { AOC_OUTPUT_TYPE, readAOCInputFile } from '@/aoc/file/aocfile.js'
+import { file } from '@/aoc/file/utils.js'
 
 import { countTrailScores } from './lib/scoresRatings.js'
 

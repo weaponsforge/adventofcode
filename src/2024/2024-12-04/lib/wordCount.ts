@@ -2,7 +2,7 @@ import { checkVertical, checkHorizontal, checkDiagonal } from './wordCheckerUtil
 
 /**
  * Counts the number of occurence of the `WORD` from a set of input
- * @param data {CharacterArray} 2D string array containing the input text
+ * @param data {string[][]} 2D string array containing the input text
  * @param WORD_TO_FIND {string} Word to find
  * @returns {number} Number of `WORD`s
  */

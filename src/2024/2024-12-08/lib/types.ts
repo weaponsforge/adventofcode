@@ -1,7 +1,4 @@
-export interface Point {
-  x: number;
-  y: number;
-}
+import type { Point } from '@/aoc/point/types.js'
 
 export interface Antenna extends Point {
   frequency: string;
