@@ -1,13 +1,11 @@
-import path from 'path'
-
 import { AOC_OUTPUT_TYPE, readAOCInputFile } from '@/aoc/file/aocfile.js'
-import { directory } from '@/aoc/file/utils.js'
+import { file } from '@/aoc/file/utils.js'
 
 import { CompactDisk } from './lib/compact.js'
 import { WholeDisk } from './lib/whole.js'
 
 const input = readAOCInputFile({
-  filePath: path.join(directory(import.meta.url), 'input.txt'),
+  filePath: file(import.meta.url, 'input.txt'),
   type: AOC_OUTPUT_TYPE.STRING
 }) as string
 

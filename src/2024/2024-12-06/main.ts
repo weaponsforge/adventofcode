@@ -1,12 +1,11 @@
-import path from 'path'
-import { readAOCInputFile, AOC_OUTPUT_TYPE } from '@/aoc/file/aocfile.js'
-import { directory } from '@/aoc/file/utils.js'
+import { AOC_OUTPUT_TYPE, readAOCInputFile } from '@/aoc/file/aocfile.js'
+import { file } from '@/aoc/file/utils.js'
 
 import { guardController } from './lib/guardController.js'
 import { findObstructionPositions } from './lib/guardControllerLoop.js'
 
-const file = readAOCInputFile({
-  filePath: path.join(directory(import.meta.url), 'input.txt'),
+const input = readAOCInputFile({
+  filePath: file(import.meta.url, 'input.txt'),
   type: AOC_OUTPUT_TYPE.STRING_ARRAY_2D
 }) as string [][]
 
@@ -15,7 +14,7 @@ const file = readAOCInputFile({
  * Counts the number of distinct guard positions in a grid
  */
 export const quiz20241206_01 = () => {
-  const grid = guardController(file, true)
+  const grid = guardController(input, true)
 
   console.log('Distinct guard positions:', grid.positionCount)
   return grid.positionCount
@@ -27,7 +26,7 @@ export const quiz20241206_01 = () => {
  *  obstacle will cause the Guard to walk in an infinite loop
  */
 export const quiz20241206_02 = () => {
-  const infinitePositions = findObstructionPositions(file)
+  const infinitePositions = findObstructionPositions(input)
 
   console.log('Obstruction positions for infinite walk:', infinitePositions)
   return infinitePositions
