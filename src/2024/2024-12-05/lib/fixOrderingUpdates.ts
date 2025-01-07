@@ -1,5 +1,5 @@
 import { isOrderedReport } from './orderedUpdates.js'
-import { arrayMiddleIndex, uniformArrayElements } from '@/aoc/arrays.js'
+import { arrayMiddleIndex, uniformArrayElements } from '@/aoc/array/utils.js'
 
 import type { Rules } from './fileReader.js'
 import type { QuizData } from './fileReader.js'

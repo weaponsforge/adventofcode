@@ -1,5 +1,5 @@
 // This code contains file input readers for common AoC input types.
-import { readFile } from './file.js'
+import { readFile } from './utils.js'
 
 /**
  * Definitions of the privimite types (`AOCFileOutput`) in which to convert the AoC quiz input text file.

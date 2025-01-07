@@ -1,4 +1,6 @@
-import { arrayToObject, isEvenDigits, halfDigit } from './utils.js'
+import { arrayToObject } from '@/aoc/array/utils.js'
+import { isEvenDigits } from '@/aoc/number/utils.js'
+import { halfDigit } from './utils.js'
 
 /**
  * @class Blinker

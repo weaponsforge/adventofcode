@@ -1,4 +1,5 @@
-import type { Antenna, Point } from './types.js'
+import type { Antenna } from './types.js'
+import type { Point } from '@/aoc/point/types.js'
 import { GridAntiNodes } from './GridAntinodes.js'
 
 /**

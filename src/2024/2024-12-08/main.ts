@@ -1,6 +1,6 @@
 import path from 'path'
-import { AOC_OUTPUT_TYPE, readAOCInputFile } from '@/aoc/aocInputFile.js'
-import { directory } from '@/aoc/file.js'
+import { AOC_OUTPUT_TYPE, readAOCInputFile } from '@/aoc/file/aocfile.js'
+import { directory } from '@/aoc/file/utils.js'
 
 import { countAntinodes } from './lib/uniqueAntinodes.js'
 import { countAllAntinodes } from './lib/allAntinodes.js'

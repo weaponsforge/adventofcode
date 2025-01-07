@@ -1,8 +1,9 @@
 import type { GardenRegionDetails } from './types.js'
-import type { GridDimensions } from '@/2024/2024-12-06/lib/grid.types.js'
-import type { Point } from '@/2024/2024-12-08/lib/types.js'
+import type { GridDimensions } from '@/aoc/grid/types.js'
+import type { Point } from '@/aoc/point/types.js'
 
-import { findNeighbors, isIllegalCoordinate } from './utils.js'
+import { findNeighbors } from '@/aoc/point/utils.js'
+import { isIllegalCoordinate } from '@/aoc/grid/utils.js'
 
 /**
  * @class Garden
