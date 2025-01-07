@@ -12,6 +12,16 @@ export type GardenRegionDetails = {
 }
 
 /**
+ * @type {Object} GardenRegionDetails
+ * @property {number} area - Area of a garden region - sum of connected plots with similar symbols.
+ * @property {number} sides - Number of sides (corners) of a region.
+ */
+export type GardenRegionSides = {
+  area: number;
+  sides: number;
+}
+
+/**
  * @type {Object} IllegalCoordinateParams
  * @property {Point} point - (y,x) coordinate object in a 2D array grid
  * @property {string} symbol - Character to check in the `point` coordinate.
@@ -23,4 +33,8 @@ export type IllegalCoordinateParams = {
   symbol: string;
   gridMeta: GridDimensions;
   grid: string[][];
+}
+
+export interface NeighborPoint extends Point {
+  symbol: string;
 }

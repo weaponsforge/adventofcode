@@ -6,7 +6,7 @@ import { findNeighbors, isIllegalCoordinate } from './utils.js'
 
 /**
  * @class Garden
- * @description A set of methods and properties for calculating Garden, Region and Plots data
+ * @description A set of methods and properties for calculating Garden, Region and per-plot perimeter data
  */
 export class Garden {
   /** Temporary storage containing processed coordinates */
@@ -16,7 +16,7 @@ export class Garden {
   totalPrice: number = 0
 
   /**
-   * Calculates the perimeter and area of all garden regions in a 2D grid, each defined
+   * Calculates the per-plot perimeter and total area of all garden regions in a 2D grid, each defined
    * by an initial symbol at a starting (y,x) coordinate.
    * Reference: https://en.wikipedia.org/wiki/Flood_fill
    * @param {Point} point - (y,x) coordinate object in a 2D array grid
@@ -62,17 +62,19 @@ export class Garden {
   }
 
   /**
-   * Calculates the total fencing price of all regions in a garden.
+   * Calculates the total fencing price of all regions in a garden per connected plot using the formula: area * perimeter (per plot).
    * @param {string[][]} data - 2D string array input
+   * @param {boolean} log - Flag to display the log messages. Defaults to `false`
    * @returns {number} Total fencing price
    */
-  calculateFencePrice (data: string[][]): number {
+  calculateFencePrice (data: string[][], log: boolean = false): number {
     const gridMeta = {
       width: data[0]!.length,
       length: data.length
     }
 
     this.processed = []
+    this.totalPrice = 0
 
     for (let y = 0; y < data.length; y += 1) {
       for (let x = 0; x < data[0]!.length; x += 1) {
@@ -92,7 +94,9 @@ export class Garden {
           const price = area * perimeter
           this.totalPrice += price
 
-          console.log(`A region of ${symbol} plants with price ${area} * ${perimeter} = ${price}`)
+          if (log) {
+            console.log(`A region of ${symbol} plants with price ${area} * ${perimeter} = ${price}`)
+          }
         }
       }
     }

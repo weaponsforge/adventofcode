@@ -1,10 +1,10 @@
 ## ✨ adventofcode
 
-This repository contains solutions and a local development environment for the [Advent of Code](https://adventofcode.com/) event puzzles using TypeScript/JavaScript.
+This repository contains solutions and a local development environment for the [Advent of Code](https://adventofcode.com/) event puzzles using **TypeScript/JavaScript**.
 
 - The code repository structure follows a way that discusses and walks through the solution steps for the AoC quizzes rather than focusing on AoC's competitive programming.
 - The quizzes were solved for fun (unlocking the 2024 AoC Chrismas symbol 🎄) and brain exercise purposes. Therefore, no GPT or AI completion was used for solving, as advised on the AoC website.
-- These codes may get occasional optimization updates and solutions using other languages from time to time.
+- These codes may get occasional optimization updates or solutions using other languages from time to time.
 
 ### 🎄 Advent of Code Quiz Information
 
@@ -22,6 +22,7 @@ This repository contains solutions and a local development environment for the [
 - Day 9: Disk Fragmenter [[link]](/src/2024/2024-12-09/README.md)
 - Day 10: Hoof It [[link]](/src/2024/2024-12-10/README.md)
 - Day 11: Plutonian Pebbles [[link]](/src/2024/2024-12-11/README.md)
+- Day 12: garden Groups [[link]](/src/2024/2024-12-12/README.md)
 
 </details>
 
