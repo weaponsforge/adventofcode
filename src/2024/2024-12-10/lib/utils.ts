@@ -8,7 +8,7 @@ import type { GridCoordinateSymbol, PointSteps } from './types.js'
  * @param {number[][]} data - 2D number array containing hiking trail data
  * @returns {GridCoordinateSymbol} Returns the `poiint` (x,y) coordinate expressed in string and its value
  */
-export const getCoordinateSymbol = (point: Point, data: number[][]): GridCoordinateSymbol => {
+export const getCoordinateSymbol = (point: Point, data: number[][] | string[][]): GridCoordinateSymbol => {
   return {
     coordinate: `${point!.x},${point!.y}`,
     symbol: data[point!.y]![point!.x] as number
