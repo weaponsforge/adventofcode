@@ -3,7 +3,6 @@ import type { Point } from '@/aoc/point/types.js'
 import { getDiagonalNeighbors } from '@/aoc/grid/utils.js'
 import { getGridDimensions, isOutOfBounds } from '@/aoc/grid/utils.js'
 
-
 /**
  * Counts the "inner" corners from groups of valid L-shaped `Points` that has the `point` parameter coordinate as its center
  * @param {Point} point - Origin (y,x) coordinate object in a 2D array grid

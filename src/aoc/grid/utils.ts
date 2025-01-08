@@ -22,8 +22,8 @@ export const getCoordinateSymbol = (point: Point, data: number[][] | string[][])
 }
 
 /**
- * Retrieves the length and width of a 2D string or number array
- * @param {string[][] | number[][]} data - 2D string or number array
+ * Retrieves the length and width of a generic 2D array
+ * @param {T[][] | T[][]} data - 2D array, usually `string[][]`, `number[][]` or others.
  * @returns {GridDimensions} Object containig the length and width of the 2D array
  */
 export const getGridDimensions = <T>(data: T[][]): GridDimensions => {
@@ -67,7 +67,7 @@ export const isOutOfBounds = (point: Point, gridMeta: GridDimensions): boolean =
 
 /**
  * Retrieves the four (4) diagonally aligned (y,x) coordinates and the symbol character from a `Point` in the grid.
- * Substitutes a `"*"` symbol character in the `PointSymbol.symbol`if the `point` is out of the grid bounds.
+ * Substitutes a `"*"` symbol character in the `PointSymbol.symbol` to coordinates out of the grid bounds.
  * @param {Point} point - (y,x) coordinate object in a 2D array grid
  * @param {string[][]} data - 2D string array input
  * @returns {PointSymbol[]} Array of `PointSymbol` with symbol characters.
@@ -96,7 +96,7 @@ export const getDiagonalNeighbors = (point: Point, data: string[][]): PointSymbo
 
 /**
  * Retrieves the four (4) horizontal/vertical aligned (y,x) coordinates and the symbol character from a `Point` in the grid.
- * Substitutes a `"*"` symbol character in the `PointSymbol.symbol`if the `point` is out of the grid bounds.
+ * Substitutes a `"*"` symbol character in the `PointSymbol.symbol` to coordinates out of the grid bounds.
  * @param {Point} point - (y,x) coordinate object in a 2D array grid
  * @param {string[][]} data - 2D string array input
  * @returns {PointSymbol[]} Array of `PointSymbol` with symbol characters.

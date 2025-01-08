@@ -23,6 +23,7 @@ This repository contains solutions and a local development environment for the [
 - Day 10: Hoof It [[link]](/src/2024/2024-12-10/README.md)
 - Day 11: Plutonian Pebbles [[link]](/src/2024/2024-12-11/README.md)
 - Day 12: Garden Groups [[link]](/src/2024/2024-12-12/README.md)
+- Day 13: Claw Contraption [[link]](/src/2024/2024-12-13/README.md)
 
 </details>
 
@@ -67,20 +68,20 @@ It follows the directory structure:
 
 #### Quiz Folders
 
-Each Advent of Code (AOC) event quiz has its folder under **`"/src/<YEAR>/<YYYY-MM-DD>"`** containing:
+Each Advent of Code (AoC) event quiz has its folder under **`"/src/<YEAR>/<YYYY-MM-DD>"`** containing:
 - **/lib**: Folder containing main quiz solution logic
 - **input.txt**: Random quiz input
    > _**INFO:** The sample quiz inputs were slightly altered from the original AoC input text and quiz samples as advised on their website_
 - **main.ts**: Main program entry point containing quiz answer(s) using random input
 - **sample.test.ts**: Minimal sample input with expected correct answers
-- **README.md**: Reference and other notes about the AOC quiz question
+- **README.md**: Reference and other notes about the AoC quiz question
 
 #### Other Items
 
 - **/src/aoc**: 🗃️ Folder containing generic utility and common AoC helper functions
 - **/src/dist**: Folder containing the JavaScript files compiled from TypeScript (not committed to the repository)
 - **/src/sample**: Miscellaneous random examples
-- **/src/index.ts**: Exports all solutions to AOC quiz answer functions
+- **/src/index.ts**: Exports all solutions to AoC quiz answer functions
 
 ### 📋 Requirements
 
@@ -106,7 +107,7 @@ Each Advent of Code (AOC) event quiz has its folder under **`"/src/<YEAR>/<YYYY-
 
 Using Node
 
-1. (Optional) Replace the values of specific `input.txt` in the `"/src/<YEAR>/<YYYY-MM-DD>"` directories with actual AOC input.
+1. (Optional) Replace the values of specific `input.txt` in the `"/src/<YEAR>/<YYYY-MM-DD>"` directories with actual AoC input.
 2. Run a non-test TypeScript file inside the **/src** directory from the project's _**"root directory"**_. For example:
    ```
    npx vite-node src/sample/sample.ts
@@ -170,6 +171,10 @@ Runs the sample TS script.
 ### `npm run transpile`
 
 Builds the JavaScript files from the TypeScript files.
+
+### `npm run transpile:noemit`
+
+Runs type-checking without generating the JavaScript or declatation files from the TypeScript files.
 
 ### `npm run lint`
 
