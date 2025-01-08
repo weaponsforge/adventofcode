@@ -3,13 +3,17 @@
 Visit the Advent of Code website for more information on this puzzle at:
 
 **Source:** https://adventofcode.com/2024/day/13<br>
-**Status:** On-going ⭐
+**Status:** Complete ⭐⭐
 
 ## Code
 
 ### `count.ts`
 
-- **`countTokensPrizes()`** - Counts the minimum number of tokens needed to win all possible prizes.
+- **`countTokensPrizes()`** - Counts the number of tokens needed to win all possible prizes.
+
+### `countAdjusted.ts`
+
+- **`countTokensOnAdjustedPrizes()`** - Counts the number of tokens needed to win all possible prizes with adjusted +10000000000000 coordinates.
 
 ### `utils.ts`
 
@@ -25,4 +29,3 @@ Visit the Advent of Code website for more information on this puzzle at:
 
 <sup>[[1]](https://www.youtube.com/watch?v=jBsC34PxzoM)</sup>&nbsp; Cramer's Rule<br>
 <sup>[[2]](https://www.youtube.com/playlist?list=PLybg94GvOJ9En46TNCXL2n6SiqRc_iMB8)</sup>&nbsp; Linear Algebra Videos
-
