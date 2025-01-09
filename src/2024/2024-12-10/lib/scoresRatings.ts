@@ -28,6 +28,8 @@ const findPaths = (pointVector: PointDirection, data: number[][], isRating: bool
       if (step === undefined) continue
       const pt = getCoordinateSymbol(step, data)
 
+      if (pt === undefined) continue
+
       if (pt.symbol === 9) {
         if (isRating) {
           // Rating: count all trails ending in 9's
@@ -76,6 +78,8 @@ export const countTrailScores = (data: number[][], params?: InputOptions): Trail
     }
 
     const pt = getCoordinateSymbol(starts[i] as Point, data)
+    if (!pt) continue
+
     activeZeroIndex = pt.coordinate
     scores[activeZeroIndex] = []
 

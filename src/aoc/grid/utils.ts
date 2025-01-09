@@ -9,17 +9,23 @@ import type { Point, PointSymbol } from '../point/types.js'
 import { findNeighbors } from '../point/utils.js'
 
 /**
- * Converts a 2D `Point` point object to a string and returns its value from the 2D array
+ * Converts a 2D `Point` point object to a string and returns its value from the 2D `string` or `number` array
+ * @template T Extends `string` or `number`, representing the type of elements in the 2D array.
  * @param {Point} point - (y,x) coordinatate in the 2D array
- * @param {number[][]} data - 2D number array containing hiking trail data
- * @returns {GridCoordinateSymbol} Returns the `GridCoordinateSymbol` (x,y) coordinate expressed in string and its value
+ * @param {T[][]} data - 2D array containing `number` or `string` elements
+ * @returns {GridCoordinateSymbol<T> | undefined} Returns the `GridCoordinateSymbol` (x,y) coordinate expressed in string and its value
+ *  or `undefined` if the `point` coordinate is out of the grid bounds
  */
-export const getCoordinateSymbol = (point: Point, data: number[][] | string[][]): GridCoordinateSymbol => {
-  return {
-    coordinate: `${point!.x},${point!.y}`,
-    symbol: data[point!.y]![point!.x] as number
+export const getCoordinateSymbol =
+  <T extends string | number>(point: Point, data: T[][]): GridCoordinateSymbol<T> | undefined => {
+    const gridMeta = { length: data.length, width: data[0]!.length }
+    if (isOutOfBounds(point, gridMeta)) return
+
+    return {
+      coordinate: `${point!.x},${point!.y}`,
+      symbol: data[point!.y]![point!.x] as T
+    }
   }
-}
 
 /**
  * Retrieves the length and width of a generic 2D array
@@ -56,7 +62,7 @@ export const isIllegalCoordinate = (params: IllegalCoordinateParams): boolean =>
  * Checks if a (y,x) coordinate is out of the grid area
  * @param {Point} point - (y,x) coordinate
  * @param {GridDimensions} gridMeta - Length and width definitions of a 2D array (grid)
- * @returns {boolean} Flag if a coordinate is out of the grid area
+ * @returns {boolean} Flag indicating if a coordinate is out of the grid area
  */
 export const isOutOfBounds = (point: Point, gridMeta: GridDimensions): boolean => {
   return (
