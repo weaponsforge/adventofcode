@@ -1,7 +1,7 @@
 import type { RobotProperty } from './types.js'
 
 import { Board } from './board.js'
-import { isOutOfBounds, printGrid } from '@/aoc/grid/utils.js'
+import { printGrid } from '@/aoc/grid/utils.js'
 import type { RobotSimulationParams } from './types.js'
 
 /**
@@ -9,7 +9,7 @@ import type { RobotSimulationParams } from './types.js'
  * @typedef {RobotSimulationParams} params - Object input parameters. See the `RobotSimulationParams` interface for more information.
  * @returns {number} Safety factor after `params.seconds` have elapsed.
  */
-export const calculateSafetyFactor = (params: RobotSimulationParams) => {
+export const calculateSafetyFactor = (params: RobotSimulationParams): number => {
   const { length, width } = params.gridMeta
   const board = new Board({ length, width })
 
@@ -24,36 +24,7 @@ export const calculateSafetyFactor = (params: RobotSimulationParams) => {
   }
 
   // Simulate robots walking
-  for (let i = 0; i < params.seconds; i += 1) {
-    for (let j = 0; j < board.robots.length; j += 1) {
-      // Robot's current (y,x) position
-      let { x, y } = board.robots[j] as RobotProperty
-
-      // Increment/decrement the current position by velocity
-      x += board.robots[j]!.velocity.x
-      y += board.robots[j]!.velocity.y
-
-      // Correct the new (y,x) position if its out of the grid bounds
-      if (isOutOfBounds({ x, y }, board.settings)) {
-        if (x > board.settings.width - 1) {
-          const overflow = x - board.settings.width
-          x = overflow
-        } else if (x < 0) {
-          x = board.settings.width + x
-        }
-
-        if (y > board.settings.length - 1) {
-          const overflow = y - board.settings.length
-          y = overflow
-        } else if (y < 0) {
-          y = board.settings.length + y
-        }
-      }
-
-      // Set the robot's new (y,x) position
-      board.moveRobot(j, { x, y })
-    }
-  }
+  board.simulateRobotsWalk(params.seconds)
 
   if (params.log) {
     console.log(`Robots on grid after ${params.seconds} seconds`)

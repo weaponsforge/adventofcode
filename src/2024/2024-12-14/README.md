@@ -16,10 +16,11 @@ Visit the Advent of Code website for more information on this puzzle at:
 **Board** class
 
 - Manages the `Grid`-like 2D string array, methods, and properties in which robots run
-- **`setTileValue()`** - Sets the string value in the 2D `this.grid[][]` array
-- **`setRobot()`** - Sets a new robot into the `Board`'s robots list and marks its position in `this.grid[][]` array
-- **`moveRobot()`** - Moves a robot from a tile and updates the current and new tile's robot count
 - **`create()`** - Creates a blank `this.length` x `this.width` board, clearing
 - **`findQuadrants()`** - Finds the four (4) main quadrants of `this.grid`, each containing a set of inclusive `start` and `end` coordinates.
 - **`getQuadrant()`** - Finds the quadrant `ID` of a `Point` within the `this.grid` 2D array.
+- **`moveRobot()`** - Moves a robot from a tile and updates the current and new tile's robot count
+- **`setRobot()`** - Sets a new robot into the `Board`'s robots list and marks its position in `this.grid[][]` array
+- **`setTileValue()`** - Sets the string value in the 2D `this.grid[][]` array
+- **`simulateRobotsWalk()`** - Move (walk) the robots by updating their positions by velocity by `seconds` times.
 - **`viewQuadrants()`** - Draws categorized symbols per quadrant on a temporary 2D array for visualization.
