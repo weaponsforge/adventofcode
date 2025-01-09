@@ -83,7 +83,7 @@ export class Board {
 
     const robotData = this.robots[robotIndex] as RobotProperty
     const currentTileValue = getCoordinateSymbol(robotData, this.grid)?.symbol
-    const newPositionTileValue = getCoordinateSymbol(robotData, this.grid)?.symbol
+    const newPositionTileValue = getCoordinateSymbol(point, this.grid)?.symbol
 
     if (!currentTileValue || !newPositionTileValue) return
 
