@@ -1,5 +1,5 @@
 import type { Point } from '@/aoc/point/types.js'
-import type { GridDimensions } from '@/aoc/grid/types.js';
+import type { GridDimensions } from '@/aoc/grid/types.js'
 
 /**
  * Location and velocity properties of a Robot
