@@ -115,3 +115,13 @@ export const getCrossNeighbors = (point: Point, data: string[][]): PointSymbol[]
     return [...list, item]
   }, [])
 }
+
+/**
+ * Prints the contents of a 2D `string` or `number` array to screen.
+ * @param {string[][] | number[][]} grid - 2D string or number array to print on screen.
+ * @returns {void}
+ */
+export const printGrid = (grid: string[][] | number[][]): void => {
+  if (!grid) return
+  console.log(grid.map(row => row.join(' ')))
+}

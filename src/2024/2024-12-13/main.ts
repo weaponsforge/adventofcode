@@ -6,7 +6,7 @@ const data = fileReader('../input.txt')
 const data2 = fileReader('../input2.txt')
 
 /**
- * Part 1/2 of the 2024-12-14 quiz
+ * Part 1/2 of the 2024-12-13 quiz
  * Counts the number of tokens needed to win all possible prizes.
  */
 const quiz20241213_01 = () => {
@@ -17,7 +17,7 @@ const quiz20241213_01 = () => {
 }
 
 /**
- * Part 2/2 of the 2024-12-14 quiz
+ * Part 2/2 of the 2024-12-13 quiz
  * Counts the number of tokens needed to win all possible prizes,
  * adjusted to the additional `10000000000000` of the prize coordinates
  */
