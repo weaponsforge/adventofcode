@@ -1,8 +1,9 @@
 import type { GridDimensions } from '@/aoc/grid/types.js'
-import { isOutOfBounds, printGrid } from '@/aoc/grid/utils.js'
 import type { Point } from '@/aoc/point/types.js'
 import type { Quadrant, RobotProperty } from './types.js'
+
 import { arrayMiddleIndex } from '@/aoc/array/utils.js'
+import { getCoordinateSymbol, isOutOfBounds, printGrid } from '@/aoc/grid/utils.js'
 
 /**
  * @class Board
@@ -24,6 +25,7 @@ export class Board {
   /** List (array) of robots coordinate and velocity data */
   robots: RobotProperty[] = []
 
+  /** Start and end coordinates of `this.grid` 4 main quadrants */
   quadrants: Quadrant[] = []
 
   /**
@@ -38,17 +40,6 @@ export class Board {
 
     this.create()
     this.quadrants = this.findQuadrants()
-  }
-
-  /**
-   * Returns the value of the number or character in the `point` coordinate, or
-   * `undefined` if the `point` coordinate is out of the grid bounds
-   * @param {Point} point - Object containing (y,x) point coordinate
-   * @returns {string | undefined} Value of the number or character
-   */
-  getTileValue (point: Point): string | undefined {
-    if (isOutOfBounds(point, this.settings)) return
-    return this.grid[point.y]![point.x]
   }
 
   /**
@@ -69,7 +60,7 @@ export class Board {
    */
   setRobot (robotData: RobotProperty): void | undefined {
     const { x, y } = robotData
-    const tileValue = this.getTileValue(robotData)
+    const tileValue = getCoordinateSymbol({ x, y }, this.grid)?.symbol
 
     if (!tileValue) return
 
@@ -91,8 +82,8 @@ export class Board {
     if (robotIndex < 0 || robotIndex > this.robots.length) return
 
     const robotData = this.robots[robotIndex] as RobotProperty
-    const currentTileValue = this.getTileValue(robotData)
-    const newPositionTileValue = this.getTileValue(point)
+    const currentTileValue = getCoordinateSymbol(robotData, this.grid)?.symbol
+    const newPositionTileValue = getCoordinateSymbol(robotData, this.grid)?.symbol
 
     if (!currentTileValue || !newPositionTileValue) return
 

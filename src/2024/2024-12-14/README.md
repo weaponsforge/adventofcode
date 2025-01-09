@@ -16,7 +16,6 @@ Visit the Advent of Code website for more information on this puzzle at:
 **Board** class
 
 - Manages the `Grid`-like 2D string array, methods, and properties in which robots run
-- **`getTileValue()`** - Returns the value of the number or character in the `point` coordinate, or `undefined` if the `point` coordinate is out of the grid bounds
 - **`setTileValue()`** - Sets the string value in the 2D `this.grid[][]` array
 - **`setRobot()`** - Sets a new robot into the `Board`'s robots list and marks its position in `this.grid[][]` array
 - **`moveRobot()`** - Moves a robot from a tile and updates the current and new tile's robot count
