@@ -2,12 +2,13 @@ import type { Point } from '../point/types.js'
 
 /**
  * Represents a "(y,x)" coordinate in string and its value from a 2D array.
- * @param {string} coordinate - String version of an "(y,x)" coordinate
- * @param {string | number} symbol - Number or character in a 2D arary denoted by the (y,x) coordinate
+ * @template T Extends `string` or `number`, representing the type of the symbol value.
+ * @property {string} coordinate - String version of a "(y,x)" coordinate
+ * @property {T} symbol - Number or character in a 2D array denoted by the (y,x) coordinate
  */
-export type GridCoordinateSymbol = {
+export type GridCoordinateSymbol<T extends string | number> = {
   coordinate: string;
-  symbol: string | number;
+  symbol: T
 }
 
 /**
