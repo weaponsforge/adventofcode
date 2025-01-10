@@ -206,8 +206,8 @@ export class Board {
   }
 
   /**
-   * Move (walk) the robots by updating their positions by velocity by `seconds` times.
-   * @param {number} seconds - Number of seconds to walk the robots
+   * Move (walk) the robots by updating their positions by velocity for N (`seconds`) times.
+   * @param {number} seconds - Number of seconds to iterate walking the robots
    * @param {Function} callback - An external callback function that gets executed after every second iteration.
    */
   simulateRobotsWalk (seconds: number, callback?: (elapsedSeconds: number) => void) {
@@ -215,10 +215,13 @@ export class Board {
       for (let j = 0; j < this.robots.length; j += 1) {
         // Robot's current (y,x) position
         let { x, y } = this.robots[j] as RobotProperty
+        const { x: velocityX, y: velocityY } = this.robots[j]!.velocity
+
+        if (velocityX === 0 && velocityY === 0) continue
 
         // Increment/decrement the current position by velocity
-        x += this.robots[j]!.velocity.x
-        y += this.robots[j]!.velocity.y
+        x += velocityX
+        y += velocityY
 
         // Correct the new (y,x) position if its out of the grid bounds
         if (isOutOfBounds({ x, y }, this.settings)) {

@@ -24,6 +24,7 @@ This repository contains solutions and a local development environment for the [
 - Day 11: Plutonian Pebbles [[link]](/src/2024/2024-12-11/README.md)
 - Day 12: Garden Groups [[link]](/src/2024/2024-12-12/README.md)
 - Day 13: Claw Contraption [[link]](/src/2024/2024-12-13/README.md)
+- Day 14: Restroom Redoubt [[link]](/src/2024/2024-12-14/README.md)
 
 </details>
 

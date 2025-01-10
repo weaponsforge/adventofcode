@@ -3,13 +3,18 @@
 Visit the Advent of Code website for more information on this puzzle at:
 
 **Source:** https://adventofcode.com/2024/day/14<br>
-**Status:** On-going ⭐
+**Status:** Complete ⭐⭐
 
 ## Code
 
+### `findEasterEgg.ts`
+
+- **`findEasterEgg()`** - Counts the no. of seconds before robots display (form) the Christmas Tree easter egg.
+   > **NOTE:** I got tips and hints from about the figure of the Christmas tree [here](https://elixirforum.com/t/advent-of-code-2024-day-14/68091/3) after trying to observe for a 🎄 pattern in grid renders per second iteration.
+
 ### `safetyFactor.ts`
 
-- `calculateSafetyFactor()` - Counts the safety factor after `params.seconds` of simulating moving the robots.
+- **`calculateSafetyFactor()`** - Counts the safety factor after `params.seconds` of simulating moving the robots.
 
 ### `board.ts`
 
