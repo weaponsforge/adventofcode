@@ -1,5 +1,5 @@
 import { test, expect } from 'vitest'
-import { AOC_OUTPUT_TYPE, readAOCInputFileAsync } from '@/aoc/file/aocfile.js'
+import { AOCOutputType, readAOCInputFileAsync } from '@/aoc/file/aocfile.js'
 import { file } from '@/aoc/file/utils.js'
 
 import { Garden } from './lib/garden.js'
@@ -19,7 +19,7 @@ const files: Promise<string[][]>[] = []
 for (let i = 0; i < inputFiles.length; i += 1) {
   files.push(readAOCInputFileAsync({
     filePath: file(import.meta.url, inputFiles[i] as string),
-    type: AOC_OUTPUT_TYPE.STRING_ARRAY_2D
+    type: AOCOutputType.STRING_ARRAY_2D
   }))
 }
 

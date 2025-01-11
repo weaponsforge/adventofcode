@@ -1,4 +1,4 @@
-import { AOC_OUTPUT_TYPE, readAOCInputFile } from '@/aoc/file/aocfile.js'
+import { AOCOutputType, readAOCInputFile } from '@/aoc/file/aocfile.js'
 import { file } from '@/aoc/file/utils.js'
 
 import { Garden } from './lib/garden.js'
@@ -6,7 +6,7 @@ import { WholesaleGarden } from './lib/wholesale.js'
 
 const input = readAOCInputFile({
   filePath: file(import.meta.url, 'input.txt'),
-  type: AOC_OUTPUT_TYPE.STRING_ARRAY_2D
+  type: AOCOutputType.STRING_ARRAY_2D
 }) as string[][]
 
 /**

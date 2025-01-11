@@ -1,13 +1,13 @@
 import { test, expect } from 'vitest'
 
-import { AOC_OUTPUT_TYPE, readAOCInputFile } from '@/aoc/file/aocfile.js'
+import { AOCOutputType, readAOCInputFile } from '@/aoc/file/aocfile.js'
 import { file } from '@/aoc/file/utils.js'
 
 import { countTrailScores } from './lib/scoresRatings.js'
 
 const input = readAOCInputFile({
   filePath: file(import.meta.url, 'input.txt'),
-  type: AOC_OUTPUT_TYPE.NUMBER_ARRAY_2D
+  type: AOCOutputType.NUMBER_ARRAY_2D
 }) as number[][]
 
 test('Total trailhead score:', () => {

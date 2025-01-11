@@ -4,19 +4,16 @@ import { fileReader } from './lib/fileReader.js'
 import { calculateSafetyFactor } from './lib/safetyFactor.js'
 import { findEasterEgg } from './lib/findEasterEgg.js'
 
-const dataSample = fileReader('../input_sample.txt')
-const dataQuiz = fileReader('../input.txt')
-
-// Grid dimensions for the sample input
-const gridSample = { length: 7, width: 11 }
-
-// Grid dimensions for the randomized quiz input
-const gridQuiz = { length: 103, width: 101 }
-
 test('Safety factor:', () => {
+  // Grid dimensions for the randomized quiz input
+  const gridSettings = { length: 7, width: 11 }
+
+  // Sample data. Replace with AoC quiz data.
+  const dataInput = fileReader('../input1.txt')
+
   const safetyFactor = calculateSafetyFactor({
-    data: dataSample,
-    gridMeta: gridSample,
+    data: dataInput,
+    gridMeta: gridSettings,
     seconds: 100
   })
 
@@ -24,9 +21,15 @@ test('Safety factor:', () => {
 })
 
 test('Easter egg iteration no. (seconds):', () => {
+  // Grid dimensions for the randomized quiz input
+  const gridSettings = { length: 103, width: 101 }
+
+  // Random AoC auiz data
+  const dataInput = fileReader('../input.txt')
+
   const seconds = findEasterEgg({
-    data: dataQuiz,
-    gridMeta: gridQuiz,
+    data: dataInput,
+    gridMeta: gridSettings,
     seconds: 10000
   })
 
