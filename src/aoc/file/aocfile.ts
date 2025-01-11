@@ -9,7 +9,7 @@ import { readFile } from './utils.js'
  * - `NUMBER_ARRAY` - Array of numbers: `number[]`
  * - `NUMBER_ARRAY_2D` - 2D array of numbers: `number[][]`
  */
-export enum AOC_OUTPUT_TYPE {
+export enum AOCOutputType {
   STRING = 'string',
   STRING_ARRAY = 'string_array',
   STRING_ARRAY_2D = '2d_string_array',
@@ -20,12 +20,12 @@ export enum AOC_OUTPUT_TYPE {
 /**
  * Input parameters indicating details about the AoC quiz input file.
  * @param {string} filePath - Full file path to an AoC input text file.
- * @param {AOC_OUTPUT_TYPE} type - Type to convert the input text file. One of `AOC_OUTPUT_TYPE`.
+ * @param {AOCOutputType} type - Type to convert the input text file. One of `AOCOutputType`.
  * @param {delimiter} delimiter - String delimiter to `split()` between characters in the original text file. Defaults to none.
  */
 type AOCFileInput = {
   filePath: string;
-  type: AOC_OUTPUT_TYPE;
+  type: AOCOutputType;
   delimiter?: string;
 }
 
@@ -51,23 +51,23 @@ export const readAOCInputFile = (param: AOCFileInput): AOCFileOutput => {
   }
 
   switch(param.type) {
-  case AOC_OUTPUT_TYPE.STRING:
+  case AOCOutputType.STRING:
     return file as string
 
-  case AOC_OUTPUT_TYPE.STRING_ARRAY:
+  case AOCOutputType.STRING_ARRAY:
     return file.split(delimiter) as string[] || []
 
-  case AOC_OUTPUT_TYPE.STRING_ARRAY_2D:
+  case AOCOutputType.STRING_ARRAY_2D:
     return file
       .split('\n')
       .map(row => row.split(delimiter)) as string[][] || []
 
-  case AOC_OUTPUT_TYPE.NUMBER_ARRAY:
+  case AOCOutputType.NUMBER_ARRAY:
     return file
       .split(delimiter)
       .map(Number) as number[] || []
 
-  case AOC_OUTPUT_TYPE.NUMBER_ARRAY_2D:
+  case AOCOutputType.NUMBER_ARRAY_2D:
     return file
       .split('\n')
       .map(row => row.split(delimiter).map(Number)) as number[][] || []

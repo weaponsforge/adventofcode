@@ -1,6 +1,6 @@
 import type { MatrixData } from './types.js'
 
-import { AOC_OUTPUT_TYPE, readAOCInputFile } from '@/aoc/file/aocfile.js'
+import { AOCOutputType, readAOCInputFile } from '@/aoc/file/aocfile.js'
 import { file } from '@/aoc/file/utils.js'
 
 /**
@@ -11,7 +11,7 @@ import { file } from '@/aoc/file/utils.js'
 export const fileReader = (fileName: string): MatrixData<number[]> => {
   const input = readAOCInputFile({
     filePath: file(import.meta.url, fileName),
-    type: AOC_OUTPUT_TYPE.STRING
+    type: AOCOutputType.STRING
   }) as string
 
   return input

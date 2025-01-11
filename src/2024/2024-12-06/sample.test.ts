@@ -1,6 +1,6 @@
 import { test, expect } from 'vitest'
 
-import { AOC_OUTPUT_TYPE, readAOCInputFile } from '@/aoc/file/aocfile.js'
+import { AOCOutputType, readAOCInputFile } from '@/aoc/file/aocfile.js'
 import { file } from '@/aoc/file/utils.js'
 
 import { guardController } from './lib/guardController.js'
@@ -8,7 +8,7 @@ import { findObstructionPositions } from './lib/guardControllerLoop.js'
 
 const input = readAOCInputFile({
   filePath: file(import.meta.url, 'input.txt'),
-  type: AOC_OUTPUT_TYPE.STRING_ARRAY_2D
+  type: AOCOutputType.STRING_ARRAY_2D
 }) as string [][]
 
 test('Count distinct guard positions', () => {
