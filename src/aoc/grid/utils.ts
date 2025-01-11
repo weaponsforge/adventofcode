@@ -10,7 +10,7 @@ import { findNeighbors } from '../point/utils.js'
 
 /**
  * Converts a 2D `Point` point object to a string and returns its value from the 2D `string` or `number` array
- * @template T Extends `string` or `number`, representing the type of elements in the 2D array.
+ * @template T Extends `string` or `number`, representing the type of elements in the 2D `data` array.
  * @param {Point} point - (y,x) coordinatate in the 2D array
  * @param {T[][]} data - 2D array containing `number` or `string` elements
  * @returns {GridCoordinateSymbol<T> | undefined} Returns the `GridCoordinateSymbol` (x,y) coordinate expressed in string and its value
@@ -26,6 +26,30 @@ export const getCoordinateSymbol =
       symbol: data[point!.y]![point!.x] as T
     }
   }
+
+/**
+ * Retrieves the first `Point` (y,x) coordinate of a `symbol` that appears in a 2D array.
+ * @param {T[][]} grid - 2D `string` or `number` array
+ * @param {string} symbol - Character or number to look for in the `grid`
+ * @returns {Point} Object containing the (y,x) coordinate of the `symbol`
+ */
+export const getGridCoordinate = <T extends string | number>(grid: T[][], symbol: T): Point => {
+  const point: Point = { x: -1, y: -1 }
+
+  for (let y = 0; y < grid.length; y += 1) {
+    for (let x = 0; x < grid[0]!.length; x += 1) {
+      if (grid[y]![x] === symbol) {
+        point.x = x
+        point.y = y
+        break
+      }
+
+      if (point.x !== -1) break
+    }
+  }
+
+  return point
+}
 
 /**
  * Retrieves the length and width of a generic 2D array

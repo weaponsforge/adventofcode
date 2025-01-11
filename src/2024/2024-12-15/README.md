@@ -5,6 +5,23 @@ Visit the Advent of Code website for more information on this puzzle at:
 **Source:** https://adventofcode.com/2024/day/15<br>
 **Status:** On-going ⭐
 
+## Code
+
+### `robot.ts`
+
+**Robot** class
+
+- Manages the `Robot` object that runs across the grid and moves boxes
+- **`findInitialPosition()`** - Finds the robot's initial `Point` position in the 2D grid and stores them in the `this.pos` object
+- **`readInstruction()`** - Reads the next instruction and sets the (y,x) direction
+- **`walk()`** - Increments the robot's (y,x) coordinate by direction
+- **`next()`** - Finds the next (y,x) coordinate of the robot or a given `Point` parameter.
+
+### `calculateGPS.ts`
+
+- **`moveBoxes()`** - Moves the robot and boxes across the grid
+- **`calculateGPS()`** - Calculates the GPS sum of all boxes in the grid
+
 ## Notes
 
 ### Main Objects
