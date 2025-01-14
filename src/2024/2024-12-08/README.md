@@ -9,14 +9,14 @@ Visit the Advent of Code website for more information on this puzzle at:
 
 ### `GridAntinodes.ts`
 
-- `GridAntiNodes` class - Object that tracks and manages `Antennas` and `Antinodes` in a 2D grid array
+- **`GridAntiNodes`** class - Object that tracks and manages `Antennas` and `Antinodes` in a 2D grid array
 
 ### `uniqueAntinodes.ts`
 
-- `uniqueAntinodes()` - Counts the unique locations in the grid that contains an antinode
+- **`countAntinodes()`** - Counts the unique locations in the grid that contains an antinode
 
 ### `allAntinodes.ts`
 
-- `getAntinodesInPath()` - Finds all `Antinode` coordinates along a path within a 2D array (grid) given a `Point`, increment steps and a +/- direction
+- **`getAntinodesInPath()`** - Finds all `Antinode` coordinates along a path within a 2D array (grid) given a `Point`, increment steps and a +/- direction
 
-- `countAllAntinodes()` - Counts the unique locations in the grid that contains all locations of antinodes along a path
+- **`countAllAntinodes()`** - Counts the unique locations in the grid that contains all locations of antinodes along a path

@@ -1,16 +1,15 @@
-import path from 'path'
 import { test, expect } from 'vitest'
 
-import { readAOCInputFile, AOC_OUTPUT_TYPE } from '@/utils/aocInputFile.js'
-import { directory } from '@/utils/file.js'
+import { AOCOutputType, readAOCInputFile } from '@/aoc/file/aocfile.js'
+import { file } from '@/aoc/file/utils.js'
 
 import { totalCalibrationResult } from './lib/totalCalibration.js'
 import { totalCalibrationConcat } from './lib/totalCalibrationConcat.js'
 
 // Read and process the input file
 const input = (readAOCInputFile({
-  filePath: path.join(directory(import.meta.url), 'input.txt'),
-  type: AOC_OUTPUT_TYPE.STRING
+  filePath: file(import.meta.url, 'input.txt'),
+  type: AOCOutputType.STRING
 }) as string)
   .split('\n')
 

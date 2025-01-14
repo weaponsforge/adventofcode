@@ -1,11 +1,8 @@
-import type { Point } from '../../2024-12-08/lib/types.js'
-import type { InputOptions, PointSteps, PointDirection, TrailScores } from './types.js'
+import type { Point, PointDirection, PointSteps } from '@/aoc/point/types.js'
+import type { InputOptions, TrailScores } from './types.js'
 
-import {
-  findValidSteps,
-  findZeroCoordinatePositions,
-  getCoordinateSymbol
-} from './utils.js'
+import { getCoordinateSymbol } from '@/aoc/grid/utils.js'
+import { findValidSteps, findZeroCoordinatePositions } from './utils.js'
 
 // List of trailhead scores
 const scores: Record<string, string[]> = {}
@@ -30,6 +27,8 @@ const findPaths = (pointVector: PointDirection, data: number[][], isRating: bool
 
       if (step === undefined) continue
       const pt = getCoordinateSymbol(step, data)
+
+      if (pt === undefined) continue
 
       if (pt.symbol === 9) {
         if (isRating) {
@@ -79,6 +78,8 @@ export const countTrailScores = (data: number[][], params?: InputOptions): Trail
     }
 
     const pt = getCoordinateSymbol(starts[i] as Point, data)
+    if (!pt) continue
+
     activeZeroIndex = pt.coordinate
     scores[activeZeroIndex] = []
 

@@ -1,19 +1,8 @@
-export type CharacterArray = string[][]
-
-interface CoordinateBase {
-  x: number;
-  y: number;
-}
-
-interface Coordinate extends CoordinateBase {
-  direction: 1 | -1;
-}
-
-interface CoordinateData {
-  xDirection: 1 | -1;
-  yDirection: 1 | -1;
-  data: CharacterArray
-}
+import type {
+  Coordinate,
+  Point,
+  CoordinateData
+} from '@/aoc/point/types.js'
 
 /**
  * Finds the `WORD` input parameter in the vertical directions (up/down) from an (x,y) coordinate
@@ -23,11 +12,11 @@ interface CoordinateData {
  * @param coord.direction {number} Up or down letter-checking direction
  *   - `-1` for "up" going to (0,0)
  *   - `1` for "down" going to (N,N) from the `coord`
- * @param fullData {CharacterArray} 2D array of strings consisting of letters per item
+ * @param fullData {string[][]} 2D array of strings consisting of letters per item
  * @param WORD {string} Word to find
  * @returns {boolean} Flag indicating the existence of the `WORD`
  */
-export const checkVertical = (coord: Coordinate, fullData: CharacterArray, WORD: string): boolean => {
+export const checkVertical = (coord: Coordinate, fullData: string[][], WORD: string): boolean => {
   let yIndex = coord.y
   let subWord = ''
 
@@ -79,11 +68,11 @@ export const checkHorizontal = (coord: Coordinate, rowData: string[], WORD: stri
  * @typedef param {CoordinateData} Direction and data object
  * @param param.xDirection {number} `-1` for "left" going to (0,0) or `1` for "right" going to (N,N) from the `coord`
  * @param param.yDirection {number} `-1` for "up" going to (0,0) or `1` for "down" going to (N,N) from the `coord`
- * @param param.data {CharacterArray} 2D string array containing the input text
+ * @param param.data {string[][]} 2D string array containing the input text
  * @returns {boolean} Flag indicating the existence of the `WORD`
  * @param WORD {string} Word to find
  */
-export const checkDiagonal = (coord: CoordinateBase, param: CoordinateData, WORD: string): boolean => {
+export const checkDiagonal = (coord: Point, param: CoordinateData, WORD: string): boolean => {
   let xIndex = coord.x
   let yIndex = coord.y
   let subWord = ''

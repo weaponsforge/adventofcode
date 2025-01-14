@@ -1,6 +1,6 @@
 import path from 'path'
-import { directory, readFile } from '@/utils/file.js'
-import { uniformArrayElements } from '@/utils/arrays.js'
+import { directory, readFile } from '@/aoc/file/utils.js'
+import { uniformArrayElements } from '@/aoc/array/utils.js'
 
 export type Rules = Record<number, number[]>
 

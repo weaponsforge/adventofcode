@@ -1,7 +1,6 @@
 import { GuardStatus, GuardDirection } from './guard.types.js'
 import type { GuardState } from './guard.types.js'
 
-
 /**
  * @class Grid
  * @description Object containing a 2D array of strings and other data in which a `Guard` object runs. Each item represents an open path or obstacle.

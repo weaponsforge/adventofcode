@@ -1,19 +1,6 @@
-import type { Point } from '@/2024/2024-12-08/lib/types.js'
-import type { GridDimensions } from '@/2024/2024-12-06/lib/grid.types.js'
-import type { GridCoordinateSymbol, PointSteps } from './types.js'
-
-/**
- * Converts a 2D `Point` point object to string and returns its value from the 2D array
- * @param {Point} point - (y,x) coordinatate in the 2D array
- * @param {number[][]} data - 2D number array containing hiking trail data
- * @returns {GridCoordinateSymbol} Returns the `poiint` (x,y) coordinate expressed in string and its value
- */
-export const getCoordinateSymbol = (point: Point, data: number[][]): GridCoordinateSymbol => {
-  return {
-    coordinate: `${point!.x},${point!.y}`,
-    symbol: data[point!.y]![point!.x] as number
-  }
-}
+import type { Point, PointSteps } from '@/aoc/point/types.js'
+import type { GridDimensions } from '@/aoc/grid/types.js'
+import { isOutOfBounds } from '@/aoc/grid/utils.js'
 
 /**
  * Finds the (y,x) coordinates of starting positions in a trailhead grid
@@ -30,19 +17,6 @@ export const findZeroCoordinatePositions = (data: number[][], symbol?: number): 
 
     return [...list, ...rowItems]
   }, [])
-}
-
-/**
- * Checks if a (y,x) coordinate is out of the grid area
- * @param {Point} point - (y,x) coordinate
- * @param {GridDimensions} gridMeta - Length and width definitions of a 2D array (grid)
- * @returns {boolean} Flag if a coordinate is out of the grid area
- */
-export const isOutOfBounds = (point: Point, gridMeta: GridDimensions): boolean => {
-  return (
-    point.x < 0 || point.x >= gridMeta.width ||
-    point.y < 0 || point.y >= gridMeta.length
-  )
 }
 
 /**

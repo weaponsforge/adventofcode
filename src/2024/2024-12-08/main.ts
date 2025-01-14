@@ -1,13 +1,12 @@
-import path from 'path'
-import { AOC_OUTPUT_TYPE, readAOCInputFile } from '@/utils/aocInputFile.js'
-import { directory } from '@/utils/file.js'
+import { AOCOutputType, readAOCInputFile } from '@/aoc/file/aocfile.js'
+import { file } from '@/aoc/file/utils.js'
 
 import { countAntinodes } from './lib/uniqueAntinodes.js'
 import { countAllAntinodes } from './lib/allAntinodes.js'
 
 const input = readAOCInputFile({
-  filePath: path.join(directory(import.meta.url), 'input.txt'),
-  type: AOC_OUTPUT_TYPE.STRING_ARRAY_2D
+  filePath: file(import.meta.url, 'input.txt'),
+  type: AOCOutputType.STRING_ARRAY_2D
 }) as string[][]
 
 /**
