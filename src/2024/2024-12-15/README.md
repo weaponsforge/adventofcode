@@ -5,6 +5,8 @@ Visit the Advent of Code website for more information on this puzzle at:
 **Source:** https://adventofcode.com/2024/day/15<br>
 **Status:** Complete ⭐⭐
 
+![part2 animation](assets/part2.gif)
+
 ## Code
 
 ### `robot.ts`
