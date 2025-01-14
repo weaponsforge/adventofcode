@@ -37,7 +37,7 @@ Visit the Advent of Code website for more information on this puzzle at:
 
 ### `fileReaderExpanded.ts`
 
-- **`fileReader()`** - Reads and formats the day 15 - part 2 quiz input file. Expands the tile symbols by 2.
+- **`fileReaderExpand()`** - Reads and formats the day 15 - part 2 quiz input file. Expands the tile symbols by 2.
 
 ### `utils.ts`
 
