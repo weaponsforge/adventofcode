@@ -18,7 +18,7 @@ Visit the Advent of Code website for more information on this puzzle at:
 - **`findInitialPosition()`** - Finds the robot's initial `Point` position in the 2D grid and stores them in the `this.pos` object
 - **`readInstruction()`** - Reads the next instruction and sets the (y,x) direction
 - **`walk()`** - Increments the robot's (y,x) coordinate by direction
-- **`next()`** - Finds the **next** (y,x) coordinate of the robot or a given `Point` parameter using the robot's current direction.
+- **`next()`** - Finds the robot's **next** (y,x) coordinate or a given `Point` parameter using the robot's current direction.
 - **`prev()`** - Finds the robot's **previous** (y,x) coordinate or a given `Point` parameter using the robot's current direction.
 
 ### `calculateGPS.ts`
@@ -38,6 +38,13 @@ Visit the Advent of Code website for more information on this puzzle at:
 ### `fileReaderExpanded.ts`
 
 - **`fileReader()`** - Reads and formats the day 15 - part 2 quiz input file. Expands the tile symbols by 2.
+
+### `utils.ts`
+
+- **`isExpandedBoxSymbol()`** - Checks if the `symbol` parameter is an expanded box symbol `"["` or `"]"`
+- **`getBoxStartCoordinates()`** - Retrieves the 2 half-box (y,x) coordinates of a full expanded box - left and right `PointSymbol`
+- **`getReverseSymbol()`** - Retrieves the reverse matching symbol of an expanded box symbol
+- **`getSymbolDirection()`** - Retrieves the `x` direction associated with an expanded box symbol
 
 ## Notes
 

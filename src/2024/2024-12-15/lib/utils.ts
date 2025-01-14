@@ -2,7 +2,7 @@ import type { Point, PointSymbol } from '@/aoc/point/types.js'
 import { getCoordinateSymbol } from '@/aoc/grid/utils.js'
 
 /**
- * Checks if the `symbol` parameter is an expanded box symbol
+ * Checks if the `symbol` parameter is an expanded box symbol `"["` or `"]"`
  * @param {string} symbol - String character representing an expanded box symbol
  * @returns {boolean} Flag indicating if the `symbol` character is a box symbol
  */
