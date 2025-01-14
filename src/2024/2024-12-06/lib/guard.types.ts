@@ -3,9 +3,9 @@
  *
  * @enum {string}
  * @property {string} UP - Upward direction `"^"`
- * @property {string} RIGHT - Upward direction `">"`
- * @property {string} DOWN - Upward direction `"v"`
- * @property {string} LEFT - Upward direction `"<"`
+ * @property {string} RIGHT - Right direction `">"`
+ * @property {string} DOWN - Downward direction `"v"`
+ * @property {string} LEFT - Left direction `"<"`
  */
 export enum GuardDirection {
   UP = '^',

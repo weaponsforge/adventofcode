@@ -25,6 +25,7 @@ This repository contains solutions and a local development environment for the [
 - Day 12: Garden Groups [[link]](/src/2024/2024-12-12/README.md)
 - Day 13: Claw Contraption [[link]](/src/2024/2024-12-13/README.md)
 - Day 14: Restroom Redoubt [[link]](/src/2024/2024-12-14/README.md)
+- Day 15: Warehouse Woes [[link]](/src/2024/2024-12-15/README.md)
 
 </details>
 
