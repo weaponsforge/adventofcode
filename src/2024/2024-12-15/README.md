@@ -3,7 +3,7 @@
 Visit the Advent of Code website for more information on this puzzle at:
 
 **Source:** https://adventofcode.com/2024/day/15<br>
-**Status:** On-going ⭐
+**Status:** Complete ⭐⭐
 
 ## Code
 
@@ -15,12 +15,26 @@ Visit the Advent of Code website for more information on this puzzle at:
 - **`findInitialPosition()`** - Finds the robot's initial `Point` position in the 2D grid and stores them in the `this.pos` object
 - **`readInstruction()`** - Reads the next instruction and sets the (y,x) direction
 - **`walk()`** - Increments the robot's (y,x) coordinate by direction
-- **`next()`** - Finds the next (y,x) coordinate of the robot or a given `Point` parameter.
+- **`next()`** - Finds the **next** (y,x) coordinate of the robot or a given `Point` parameter using the robot's current direction.
+- **`prev()`** - Finds the robot's **previous** (y,x) coordinate or a given `Point` parameter using the robot's current direction.
 
 ### `calculateGPS.ts`
 
 - **`moveBoxes()`** - Moves the robot and boxes across the grid
 - **`calculateGPS()`** - Calculates the GPS sum of all boxes in the grid
+
+### `calculateExpandedGPS.ts`
+
+- **`moveExpandedBoxes()`** - Moves the robot and the expanded (2x size) boxes across the grid.
+- **`calculateExpandedGPS()`** - Calculates the GPS sum of all expanded boxes in the grid.
+
+### `fileReader.ts`
+
+- **`fileReader()`** - Reads and formats the day 15 quiz input file.
+
+### `fileReaderExpanded.ts`
+
+- **`fileReader()`** - Reads and formats the day 15 - part 2 quiz input file. Expands the tile symbols by 2.
 
 ## Notes
 

@@ -53,7 +53,8 @@ export const getGridCoordinate = <T extends string | number>(grid: T[][], symbol
 
 /**
  * Retrieves the length and width of a generic 2D array
- * @param {T[][] | T[][]} data - 2D array, usually `string[][]`, `number[][]` or others.
+ * @template T Type of elements in the 2D `data` array.
+ * @param {T[][]} data - 2D array, usually `string[][]`, `number[][]` or others.
  * @returns {GridDimensions} Object containig the length and width of the 2D array
  */
 export const getGridDimensions = <T>(data: T[][]): GridDimensions => {

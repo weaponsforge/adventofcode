@@ -71,7 +71,7 @@ export class Robot {
   }
 
   /**
-   * Finds the next (y,x) coordinate of the robot or a given `Point` parameter.
+   * Finds the next (y,x) coordinate of the robot or a given `Point` parameter using the robot's current direction.
    * @param {Point} [point] - (Optional) (y,x) coordinate to find the next step coorndinate from
    * @returns {Point} Next (y,x) coordinate after 1 step
    */
@@ -81,6 +81,23 @@ export class Robot {
 
     const nextX = x + this.direction.x
     const nextY = y + this.direction.y
+
+    return {
+      x: nextX, y: nextY
+    }
+  }
+
+  /**
+   * Finds the robot's previous (y,x) coordinate or a given `Point` parameter using the robot's current direction.
+   * @param {Point} [point] - (Optional) (y,x) coordinate to find the previous step coorndinate from
+   * @returns {Point} Next (y,x) coordinate before the provided coordinate
+   */
+  prev (point?: Point): Point {
+    const x = point?.x || this.pos.x
+    const y = point?.y || this.pos.y
+
+    const nextX = x - this.direction.x
+    const nextY = y - this.direction.y
 
     return {
       x: nextX, y: nextY
