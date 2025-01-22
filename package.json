@@ -11,6 +11,7 @@
   "scripts": {
     "dev": "vitest",
     "dev:debug": "vite-node src/sample/sample.ts",
+    "dev:debug:docker": "export IS_DOCKER=true && node --inspect=0.0.0.0:9229 ./node_modules/.bin/vite-node src/sample/sample.ts",
     "transpile": "tsc -p tsconfig.json && tsc-alias",
     "transpile:noemit": "tsc -p tsconfig.json --noEmit",
     "watch": "tsc -p tsconfig.json --watch",

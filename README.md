@@ -149,6 +149,40 @@ Using Docker
    docker run -it -v ${pwd}:/opt/app -v /opt/app/node_modules --rm weaponsforge/adventofcode:dev <AVAILABLE_SCRIPT>
    ```
 
+- Run a script and debug it with the VSCode Debugger.
+   - Prepare a function for debugging with VSCode in Docker. Wrap it in the `AOCRunScript()` function.
+   - Assign the path to a TypeScript file from the previous step to the package.json file's `"dev:debug:docker"` script, replacing `src/sample/sample.ts`.
+      - `"dev:debug:docker": "export IS_DOCKER=true && node --inspect=0.0.0.0:9229 ./node_modules/.bin/vite-node src/path/to/script.ts"`
+   - Run the script with VSCode debugging:
+      ```
+      docker run -it -v ${pwd}:/opt/app -v /opt/app/node_modules --rm weaponsforge/adventofcode:dev npm run dev:debug:docker
+      ```
+   > **INFO:** This process requires attaching a debugger with the VSCode launch config defined in Issue [#53](https://github.com/weaponsforge/adventofcode/issues/53)
+
+   <details>
+   <summary>VSCode Launch Configuration</summary>
+
+   ```json
+   {
+     "version": "0.2.0",
+     "configurations": [
+       {
+         "type": "node",
+         "request": "attach",
+         "name": "Attach to Docker",
+         "address": "localhost",
+         "port": 9229,
+         "restart": true,
+         "skipFiles": ["<node_internals>/**"],
+         "localRoot": "${workspaceFolder}",
+         "remoteRoot": "/opt/app"
+       }
+     ]
+   }
+   ```
+
+   </details>
+
 ## 📜 Available Scripts
 
 <details>
