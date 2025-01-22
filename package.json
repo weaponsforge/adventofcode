@@ -1,6 +1,6 @@
 {
   "name": "adventofcode",
-  "version": "1.1.0",
+  "version": "1.2.3",
   "description": "Solutions for Advent of Code https://adventofcode.com/ event puzzles",
   "main": "dist/index.js",
   "type": "module",
