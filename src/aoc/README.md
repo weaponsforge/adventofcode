@@ -18,6 +18,15 @@ A collection handler functions for manipulating regular arrays.
 - **`utils.ts`** - ES modules file and directory handlers
 - **`aocfile.ts`** - Functions for reading common-format AoC file input (arrays of `strings` or `numbers`)
 
+### 📂 `function`
+
+#### `aocFunctions.ts`
+
+A collection of utility helper functions for running AoC functions.
+
+- **`AOCDeferExecution()`** - Defers executing a function by `timeout` milliseconds.
+- **`AOCRunScript()`** - A wrapper that runs a function or defers running a function by `timeout` milliseconds if it runs in a Docker container. The `IS_DOCKER=true` environment variable indicates running inside a Docker container.
+
 ### 📂 `grid`
 
 #### `utils.ts`

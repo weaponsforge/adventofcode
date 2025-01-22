@@ -1,2 +1,4 @@
 import { greet } from './greet.js'
-greet('World Wide Web')
+import { AOCRunScript } from '@/aoc/function/aocFunctions.js'
+
+AOCRunScript(() => greet('World Wide Web'))
