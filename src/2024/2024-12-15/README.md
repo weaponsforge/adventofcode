@@ -6,7 +6,7 @@ Visit the Advent of Code website for more information on this puzzle at:
 **Status:** Complete ⭐⭐
 
 ![part2 animation from AoC online sample](assets/part2.gif)<br>
-<sub><i>(Part2 animation from AoC online sample)</i></sub>
+<sub><i>(Part2 animation for the AoC online sample)</i></sub>
 
 ## Code
 

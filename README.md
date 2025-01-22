@@ -129,27 +129,27 @@ Using Node
 
 Using Docker
 
-- Build the image
+- **Build the image**
    ```
    docker compose -f docker-compose.dev.yml build
    ```
 
-- Transpile the TypeScript files to JavaScript (PowerShell)
+- **Transpile the TypeScript files to JavaScript** (PowerShell)
    ```
    docker run -it -v ${pwd}:/opt/app -v /opt/app/node_modules --rm weaponsforge/adventofcode:dev npm run transpile
    ```
 
-- Run tests (PowerShell)
+- **Run tests** (PowerShell)
    ```
    docker run -it -v ${pwd}:/opt/app -v /opt/app/node_modules --rm weaponsforge/adventofcode:dev npm test
    ```
 
-- Watch TS file updates: Use available scripts - `npm run watch`, `npm run watch:docker:win`
+- **Watch TS file updates: Use available scripts** - `npm run watch`, `npm run watch:docker:win`
    ```
    docker run -it -v ${pwd}:/opt/app -v /opt/app/node_modules --rm weaponsforge/adventofcode:dev <AVAILABLE_SCRIPT>
    ```
 
-- Run a script and debug it with the VSCode Debugger.
+- **Run a script and debug it with the VSCode Debugger**
    - Prepare a function for debugging with VSCode in Docker. Wrap it in the `AOCRunScript()` function.
    - Assign the path to a TypeScript file from the previous step to the package.json file's `"dev:debug:docker"` script, replacing `src/sample/sample.ts`.
       - `"dev:debug:docker": "export IS_DOCKER=true && node --inspect=0.0.0.0:9229 ./node_modules/.bin/vite-node src/path/to/script.ts"`
