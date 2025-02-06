@@ -33,3 +33,10 @@ export const isDiagonal = (p1: Point, p2: Point): boolean => {
 
   return diff.x == 1 && diff.y === 1
 }
+
+/**
+ * Converts a `Point` object to string `"x,y"`
+ * @param {Point} point - `Point` object containing the { x, y } coordinate
+ * @returns {string} String conversion of a `Point` eg. `"x,y"`
+ */
+export const pointToString = (point: Point) => `${point.x},${point.y}`

@@ -10,7 +10,7 @@ Visit the Advent of Code website for more information on this puzzle at:
 ### `findEasterEgg.ts`
 
 - **`findEasterEgg()`** - Counts the no. of seconds before robots display (form) the Christmas Tree easter egg.
-   > **NOTE:** I got tips and hints from about the figure of the Christmas tree [here](https://elixirforum.com/t/advent-of-code-2024-day-14/68091/3) after trying to observe for a 🎄 pattern in grid renders per second iteration.
+   > **NOTE:** I got tips and hints about the figure of the Christmas tree [here](https://elixirforum.com/t/advent-of-code-2024-day-14/68091/3) after trying to observe for a 🎄 pattern in grid renders per second iteration.
 
 ### `safetyFactor.ts`
 
