@@ -41,7 +41,7 @@ This repository contains solutions and a local development environment for the [
 - [Usage](#-usage)
 - [Alternate Usage](#-alternate-usage)
 - [Available Scripts](#-available-scripts)
-- [Docker Scripts](#docker-scripts)
+- [Docker Scripts](#-docker-scripts)
 
 </details>
 
