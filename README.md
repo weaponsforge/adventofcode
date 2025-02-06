@@ -186,7 +186,7 @@ Using Docker
 
 ## 📜 Available Scripts
 
-These scripts, compatible with running in Docker, run various TypeScript scripts and tests.
+These scripts, compatible with running in Node and Docker, run various TypeScript scripts and tests.
 
 <details>
 <summary>Click to expand the list of available scripts</summary>
