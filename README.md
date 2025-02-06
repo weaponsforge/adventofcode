@@ -41,6 +41,7 @@ This repository contains solutions and a local development environment for the [
 - [Usage](#-usage)
 - [Alternate Usage](#-alternate-usage)
 - [Available Scripts](#-available-scripts)
+- [Docker Scripts](#docker-scripts)
 
 </details>
 
@@ -144,18 +145,18 @@ Using Docker
    docker run -it -v ${pwd}:/opt/app -v /opt/app/node_modules --rm weaponsforge/adventofcode:dev npm test
    ```
 
-- **Watch TS file updates: Use available scripts** - `npm run watch`, `npm run watch:docker:win`
+- **Watch TS file updates: Use available scripts** - e.g., `npm run watch`, `npm run docker:watch:win`
    ```
    docker run -it -v ${pwd}:/opt/app -v /opt/app/node_modules --rm weaponsforge/adventofcode:dev <AVAILABLE_SCRIPT>
    ```
 
 - **Run a script and debug it with the VSCode Debugger**
    - Prepare a function for debugging with VSCode in Docker. Wrap it in the `AOCRunScript()` function.
-   - Assign the path to a TypeScript file from the previous step to the package.json file's `"dev:debug:docker"` script, replacing `src/sample/sample.ts`.
-      - `"dev:debug:docker": "export IS_DOCKER=true && node --inspect=0.0.0.0:9229 ./node_modules/.bin/vite-node src/path/to/script.ts"`
+   - Assign the path to a TypeScript file from the previous step to the package.json file's `"docker:debug"` script, replacing `src/sample/sample.ts`.
+      - `"docker:debug": "export IS_DOCKER=true && node --inspect=0.0.0.0:9229 ./node_modules/.bin/vite-node src/path/to/script.ts"`
    - Run the script with VSCode debugging:
       ```
-      docker run -it -v ${pwd}:/opt/app -v /opt/app/node_modules -p 9229:9229 --rm weaponsforge/adventofcode:dev npm run dev:debug:docker
+      docker run -it -v ${pwd}:/opt/app -v /opt/app/node_modules -p 9229:9229 --rm weaponsforge/adventofcode:dev npm run docker:debug
       ```
    > **INFO:** This process requires attaching a debugger with the VSCode launch config defined in Issue [#53](https://github.com/weaponsforge/adventofcode/issues/53)
 
@@ -185,6 +186,8 @@ Using Docker
 
 ## 📜 Available Scripts
 
+These scripts, compatible with running in Docker, run various TypeScript scripts and tests.
+
 <details>
 <summary>Click to expand the list of available scripts</summary>
 
@@ -196,21 +199,17 @@ Runs `vitest` in watch mode, watching file changes and errors to files linked wi
 
 Watches file changes in `.ts` files using the `tsc --watch` option.
 
-### `npm run watch:docker:win`
-
-Watches file changes in `.ts` files using the `tsc --watch` option with `dynamicPriorityPolling` in Docker containers running in Windows WSL2.
-
 ### `npm run dev:debug`
 
 Runs the sample TS script.
 
 ### `npm run transpile`
 
-Builds the JavaScript files from the TypeScript files.
+Builds JavaScript, `.d.ts` declaration files, and map files from the TypeScript source files.
 
 ### `npm run transpile:noemit`
 
-Runs type-checking without generating the JavaScript or declatation files from the TypeScript files.
+Runs type-checking without generating the JavaScript or declaration files from the TypeScript files.
 
 ### `npm run lint`
 
@@ -218,11 +217,36 @@ Lints TypeScript source codes.
 
 ### `npm run lint:fix`
 
-Fixes TypeScript lint errors.
+Fixes lint errors in TypeScript files.
 
 ### `npm test`
 
-Runs tests defined in `*.test.ts` files.
+Runs test scripts defined in `*.test.ts` files.
+
+</details>
+
+## 📦 Docker Scripts
+
+These scripts allow optional Docker-related processes, such as enabling file watching in Docker containers running in Windows WSL2 and others.
+
+<details>
+<summary>Click to expand the list of available scripts</summary>
+
+### `npm run docker:debug`
+
+- Runs the `/src/sample/sample.ts` script in containers with debugging enabled in VSCode.
+
+> [!TIP]
+> Replace the `/src/sample/sample.ts` file path in the package.json file's `"docker:debug"` script with a target TypeScript file for debugging.
+
+### `npm run docker:watch:win`
+
+Watches file changes in `.ts` files using the `tsc --watch` option with `dynamicPriorityPolling` in Docker containers running in Windows WSL2.
+
+### `npm run docker:dev:win`
+
+- Sets and exports the environment variables: `CHOKIDAR_USEPOLLING=1` and `CHOKIDAR_INTERVAL=1000`
+- Runs the `npm run dev` script in Docker containers running in Windows WSL2.
 
 </details>
 <br>
