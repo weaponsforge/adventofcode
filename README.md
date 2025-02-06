@@ -234,10 +234,8 @@ These scripts allow optional Docker-related processes, such as enabling file wat
 
 ### `npm run docker:debug`
 
-- Runs the `/src/sample/sample.ts` script in containers with debugging enabled in VSCode.
-
-> [!TIP]
-> Replace the `/src/sample/sample.ts` file path in the package.json file's `"docker:debug"` script with a target TypeScript file for debugging.
+- Runs the `"/src/sample/sample.ts"` script in containers with debugging enabled in VSCode.
+- Replace the `"/src/sample/sample.ts"` file path in the package.json file's `"docker:debug"` script with a target TypeScript file for debugging.
 
 ### `npm run docker:watch:win`
 
