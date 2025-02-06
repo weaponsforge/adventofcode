@@ -236,6 +236,8 @@ These scripts allow optional Docker-related processes, such as enabling file wat
 
 - Runs the `"/src/sample/sample.ts"` script in containers with debugging enabled in VSCode.
 - Replace the `"/src/sample/sample.ts"` file path in the package.json file's `"docker:debug"` script with a target TypeScript file for debugging.
+- Map port **9229** to enable debugging VSCode while running in Docker.<br>
+`docker:debug": "export IS_DOCKER=true && node --inspect=0.0.0.0:9229 ./node_modules/.bin/vite-node src/path/to/<NEW_SCRIPT>.ts`
 
 ### `npm run docker:watch:win`
 
@@ -244,7 +246,7 @@ Watches file changes in `.ts` files using the `tsc --watch` option with `dynamic
 ### `npm run docker:dev:win`
 
 - Sets and exports the environment variables: `CHOKIDAR_USEPOLLING=1` and `CHOKIDAR_INTERVAL=1000`
-- Runs the `npm run dev` script in Docker containers running in Windows WSL2.
+- Runs `vitest` in watch mode inside Docker containers running in Windows WSL2, watching file changes and errors to files linked with `*.test.ts` files.
 
 </details>
 <br>
