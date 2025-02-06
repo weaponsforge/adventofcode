@@ -155,7 +155,7 @@ Using Docker
       - `"dev:debug:docker": "export IS_DOCKER=true && node --inspect=0.0.0.0:9229 ./node_modules/.bin/vite-node src/path/to/script.ts"`
    - Run the script with VSCode debugging:
       ```
-      docker run -it -v ${pwd}:/opt/app -v /opt/app/node_modules --rm weaponsforge/adventofcode:dev npm run dev:debug:docker
+      docker run -it -v ${pwd}:/opt/app -v /opt/app/node_modules -p 9229:9229 --rm weaponsforge/adventofcode:dev npm run dev:debug:docker
       ```
    > **INFO:** This process requires attaching a debugger with the VSCode launch config defined in Issue [#53](https://github.com/weaponsforge/adventofcode/issues/53)
 
