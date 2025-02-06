@@ -71,7 +71,7 @@ export class Robot {
   }
 
   /**
-   * Finds the next (y,x) coordinate of the robot or a given `Point` parameter using the robot's current direction.
+   * Finds the robot's next (y,x) coordinate or a given `Point` parameter using the robot's current direction.
    * @param {Point} [point] - (Optional) (y,x) coordinate to find the next step coorndinate from
    * @returns {Point} Next (y,x) coordinate after 1 step
    */
