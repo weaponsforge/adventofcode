@@ -154,7 +154,7 @@ Using Docker
    - Prepare a function for debugging with VSCode in Docker. Wrap it in the `AOCRunScript()` function.
    - Assign the path to a TypeScript file from the previous step to the package.json file's `"docker:debug"` script, replacing `src/sample/sample.ts`.
       - `"docker:debug": "export IS_DOCKER=true && node --inspect=0.0.0.0:9229 ./node_modules/.bin/vite-node src/path/to/script.ts"`
-   - Run the script with VSCode debugging:
+   - Run the script with VSCode debugging (PowerShell):
       ```
       docker run -it -v ${pwd}:/opt/app -v /opt/app/node_modules -p 9229:9229 --rm weaponsforge/adventofcode:dev npm run docker:debug
       ```
@@ -232,12 +232,22 @@ These scripts allow optional Docker-related processes, such as enabling file wat
 <details>
 <summary>Click to expand the list of available scripts</summary>
 
+<br>
+
+**Docker run command (PowerShell)**
+```
+docker run -it -v ${pwd}:/opt/app -v /opt/app/node_modules --rm weaponsforge/adventofcode:dev <AVAILABLE_SCRIPT>
+```
+
 ### `npm run docker:debug`
 
 - Runs the `"/src/sample/sample.ts"` script in containers with debugging enabled in VSCode.
 - Replace the `"/src/sample/sample.ts"` file path in the package.json file's `"docker:debug"` script with a target TypeScript file for debugging.
-- Map port **9229** to enable debugging VSCode while running in Docker.<br>
-`docker:debug": "export IS_DOCKER=true && node --inspect=0.0.0.0:9229 ./node_modules/.bin/vite-node src/path/to/<NEW_SCRIPT>.ts`
+- Map port **9229** to enable debugging VSCode while running in Docker (PowerShell).<br>
+
+   ```
+   docker run -it -v ${pwd}:/opt/app -v /opt/app/node_modules -p 9229:9229 --rm weaponsforge/adventofcode:dev npm run docker:debug
+   ```
 
 ### `npm run docker:watch:win`
 
