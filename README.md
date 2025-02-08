@@ -235,19 +235,15 @@ These scripts allow optional Docker-related processes, such as enabling file wat
 <br>
 
 **Docker run command (PowerShell)**
-```
-docker run -it -v ${pwd}:/opt/app -v /opt/app/node_modules --rm weaponsforge/adventofcode:dev <AVAILABLE_SCRIPT>
-```
+
+`docker run -it -v ${pwd}:/opt/app -v /opt/app/node_modules --rm weaponsforge/adventofcode:dev <AVAILABLE_SCRIPT>`
 
 ### `npm run docker:debug`
 
 - Runs the `"/src/sample/sample.ts"` script in containers with debugging enabled in VSCode.
 - Replace the `"/src/sample/sample.ts"` file path in the package.json file's `"docker:debug"` script with a target TypeScript file for debugging.
 - Map port **9229** to enable debugging VSCode while running in Docker (PowerShell).<br>
-
-   ```
-   docker run -it -v ${pwd}:/opt/app -v /opt/app/node_modules -p 9229:9229 --rm weaponsforge/adventofcode:dev npm run docker:debug
-   ```
+   - `docker run -it -v ${pwd}:/opt/app -v /opt/app/node_modules -p 9229:9229 --rm weaponsforge/adventofcode:dev npm run docker:debug`
 
 ### `npm run docker:watch:win`
 
