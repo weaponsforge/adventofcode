@@ -17,6 +17,7 @@
     /* Strictness */
     "strict": true,
     "noUncheckedIndexedAccess": true,
+    "noImplicitReturns": true,
     "noImplicitOverride": true,
     "alwaysStrict": true,
     "noImplicitAny": true,
