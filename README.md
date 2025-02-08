@@ -244,6 +244,26 @@ These scripts allow optional Docker-related processes, such as enabling file wat
 - Replace the `"/src/sample/sample.ts"` file path in the package.json file's `"docker:debug"` script with a target TypeScript file for debugging.
 - Map port **9229** to enable debugging VSCode while running in Docker (PowerShell).<br>
    - `docker run -it -v ${pwd}:/opt/app -v /opt/app/node_modules -p 9229:9229 --rm weaponsforge/adventofcode:dev npm run docker:debug`
+- Launch the VSCode debugger using the following configuration:
+
+   ```json
+   {
+     "version": "0.2.0",
+     "configurations": [
+       {
+         "type": "node",
+         "request": "attach",
+         "name": "Attach to Docker",
+         "address": "localhost",
+         "port": 9229,
+         "restart": true,
+         "skipFiles": ["<node_internals>/**"],
+         "localRoot": "${workspaceFolder}",
+         "remoteRoot": "/opt/app"
+       }
+     ]
+   }
+   ```
 
 ### `npm run docker:watch:win`
 
