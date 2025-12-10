@@ -88,9 +88,9 @@ Each Advent of Code (AoC) event quiz has its folder under **`"/src/<YEAR>/<YYYY-
 
 ### 📋 Requirements
 
-- Node v20.15.0 (at least)
-   - node: 20.15.0
-   - npm: 10.7.0
+- NodeJS recommended version: v21.11.0
+   - node: 21.11.0
+   - npm: 11.6.1
 
 - Docker (optional)
 
