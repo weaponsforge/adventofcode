@@ -88,9 +88,9 @@ Each Advent of Code (AoC) event quiz has its folder under **`"/src/<YEAR>/<YYYY-
 
 ### 📋 Requirements
 
-- Node v20.15.0 (at least)
-   - node: 20.15.0
-   - npm: 10.7.0
+- NodeJS recommended version: v24.11.0
+   - node: 24.11.0
+   - npm: 11.6.1
 
 - Docker (optional)
 
@@ -132,7 +132,7 @@ Using Docker
 
 - **Build the image**
    ```
-   docker compose -f docker-compose.dev.yml build
+   docker compose build
    ```
 
 - **Transpile the TypeScript files to JavaScript** (PowerShell)
@@ -154,7 +154,7 @@ Using Docker
    - Prepare a function for debugging with VSCode in Docker. Wrap it in the `AOCRunScript()` function.
    - Assign the path to a TypeScript file from the previous step to the package.json file's `"docker:debug"` script, replacing `src/sample/sample.ts`.
       - `"docker:debug": "export IS_DOCKER=true && node --inspect=0.0.0.0:9229 ./node_modules/.bin/vite-node src/path/to/script.ts"`
-   - Run the script with VSCode debugging:
+   - Run the script with VSCode debugging (PowerShell):
       ```
       docker run -it -v ${pwd}:/opt/app -v /opt/app/node_modules -p 9229:9229 --rm weaponsforge/adventofcode:dev npm run docker:debug
       ```
@@ -232,21 +232,51 @@ These scripts allow optional Docker-related processes, such as enabling file wat
 <details>
 <summary>Click to expand the list of available scripts</summary>
 
+<br>
+
+**Docker run command (PowerShell)**
+
+`docker run -it -v ${pwd}:/opt/app -v /opt/app/node_modules --rm weaponsforge/adventofcode:dev <AVAILABLE_SCRIPT>`
+
 ### `npm run docker:debug`
 
 - Runs the `"/src/sample/sample.ts"` script in containers with debugging enabled in VSCode.
 - Replace the `"/src/sample/sample.ts"` file path in the package.json file's `"docker:debug"` script with a target TypeScript file for debugging.
-- Map port **9229** to enable debugging VSCode while running in Docker.<br>
-`docker:debug": "export IS_DOCKER=true && node --inspect=0.0.0.0:9229 ./node_modules/.bin/vite-node src/path/to/<NEW_SCRIPT>.ts`
+- Map port **9229** to enable debugging VSCode while running in Docker (PowerShell).<br>
+   - `docker run -it -v ${pwd}:/opt/app -v /opt/app/node_modules -p 9229:9229 --rm weaponsforge/adventofcode:dev npm run docker:debug`
+- Launch the VSCode debugger using the following configuration:
+
+   ```json
+   {
+     "version": "0.2.0",
+     "configurations": [
+       {
+         "type": "node",
+         "request": "attach",
+         "name": "Attach to Docker",
+         "address": "localhost",
+         "port": 9229,
+         "restart": true,
+         "skipFiles": ["<node_internals>/**"],
+         "localRoot": "${workspaceFolder}",
+         "remoteRoot": "/opt/app"
+       }
+     ]
+   }
+   ```
 
 ### `npm run docker:watch:win`
 
 Watches file changes in `.ts` files using the `tsc --watch` option with `dynamicPriorityPolling` in Docker containers running in Windows WSL2.
 
+> **NOTE:** Requires running `docker compose up`
+
 ### `npm run docker:dev:win`
 
 - Sets and exports the environment variables: `CHOKIDAR_USEPOLLING=1` and `CHOKIDAR_INTERVAL=1000`
 - Runs `vitest` in watch mode inside Docker containers running in Windows WSL2, watching file changes and errors to files linked with `*.test.ts` files.
+
+> **NOTE:** Requires running `docker compose up`
 
 </details>
 <br>
