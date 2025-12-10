@@ -88,8 +88,8 @@ Each Advent of Code (AoC) event quiz has its folder under **`"/src/<YEAR>/<YYYY-
 
 ### 📋 Requirements
 
-- NodeJS recommended version: v21.11.0
-   - node: 21.11.0
+- NodeJS recommended version: v24.11.0
+   - node: 24.11.0
    - npm: 11.6.1
 
 - Docker (optional)
@@ -132,7 +132,7 @@ Using Docker
 
 - **Build the image**
    ```
-   docker compose -f docker-compose.dev.yml build
+   docker compose build
    ```
 
 - **Transpile the TypeScript files to JavaScript** (PowerShell)
