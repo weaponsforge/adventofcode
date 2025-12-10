@@ -269,10 +269,14 @@ These scripts allow optional Docker-related processes, such as enabling file wat
 
 Watches file changes in `.ts` files using the `tsc --watch` option with `dynamicPriorityPolling` in Docker containers running in Windows WSL2.
 
+> **NOTE:** Requires running `docker compose up`
+
 ### `npm run docker:dev:win`
 
 - Sets and exports the environment variables: `CHOKIDAR_USEPOLLING=1` and `CHOKIDAR_INTERVAL=1000`
 - Runs `vitest` in watch mode inside Docker containers running in Windows WSL2, watching file changes and errors to files linked with `*.test.ts` files.
+
+> **NOTE:** Requires running `docker compose up`
 
 </details>
 <br>
