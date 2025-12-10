@@ -9,13 +9,13 @@ export const fileReader = (inputFilePath: string): number[] => {
     filePath: inputFilePath,
     type: AOCOutputType.STRING_ARRAY,
     delimiter: '\n'
-  })
+  }) as string[]
 
   const negative = 'L'
   const positive = 'R'
 
   return input
-    .map(code => {
+    .map((code: string) => {
       const startLetter = code.substring(0, 1)
 
       if (![negative, positive].includes(startLetter)) {

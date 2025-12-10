@@ -16,6 +16,10 @@ export const decodePassword = (input: number[]) => {
   }
 
   for (let i = 0; i < input.length; i += 1) {
+    if (typeof input[i] !== 'number') {
+      throw new Error(`Invalid input, element ${i}: "${input[i]}"`)
+    }
+
     const offset = cursor + input[i]
     cursor = offset % MAX_LIMIT
 
