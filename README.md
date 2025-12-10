@@ -88,9 +88,9 @@ Each Advent of Code (AoC) event quiz has its folder under **`"/src/<YEAR>/<YYYY-
 
 ### 📋 Requirements
 
-- Node v20.15.0 (at least)
-   - node: 20.15.0
-   - npm: 10.7.0
+- NodeJS recommended version: v24.11.0
+   - node: 24.11.0
+   - npm: 11.6.1
 
 - Docker (optional)
 
@@ -132,7 +132,7 @@ Using Docker
 
 - **Build the image**
    ```
-   docker compose -f docker-compose.dev.yml build
+   docker compose build
    ```
 
 - **Transpile the TypeScript files to JavaScript** (PowerShell)
@@ -269,10 +269,14 @@ These scripts allow optional Docker-related processes, such as enabling file wat
 
 Watches file changes in `.ts` files using the `tsc --watch` option with `dynamicPriorityPolling` in Docker containers running in Windows WSL2.
 
+> **NOTE:** Requires running `docker compose up`
+
 ### `npm run docker:dev:win`
 
 - Sets and exports the environment variables: `CHOKIDAR_USEPOLLING=1` and `CHOKIDAR_INTERVAL=1000`
 - Runs `vitest` in watch mode inside Docker containers running in Windows WSL2, watching file changes and errors to files linked with `*.test.ts` files.
+
+> **NOTE:** Requires running `docker compose up`
 
 </details>
 <br>
