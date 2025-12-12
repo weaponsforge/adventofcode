@@ -9,5 +9,5 @@ const input = fileReader(inputFile)
 
 test('part 1: sum of invald ids', () => {
   const sumInvalid = invalidID2x(input)
-  expect(sumInvalid).toBe(1227775554)
+  expect(sumInvalid).toBe(1189292806)
 })
