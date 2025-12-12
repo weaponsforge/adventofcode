@@ -9,4 +9,4 @@ src/**/*.js
 
 **/*.txt
 !src/**/*.txt
-src/**/inputAoc.txt
+src/**/input-*.txt

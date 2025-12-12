@@ -29,6 +29,15 @@ This repository contains solutions and a local development environment for the [
 
 </details>
 
+<br>
+
+<details>
+<summary><b style="font-size: 24px;">2025</b></summary>
+
+- Day 1: Secret Entrance [[link]](/src/2025/2025-12-01/README.md)
+
+</details>
+
 ### Table of Contents
 
 <details>
