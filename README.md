@@ -29,8 +29,6 @@ This repository contains solutions and a local development environment for the [
 
 </details>
 
-<br>
-
 <details>
 <summary><b style="font-size: 24px;">2025</b></summary>
 
