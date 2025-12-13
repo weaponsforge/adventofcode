@@ -19,8 +19,8 @@ const quiz20251204_01 = () => {
 }
 
 /**
- * Part 1/2 of the 2025-12-04 quiz
- * Counts the number of paper rolls that can be accessed by fork lifts.
+ * Part 2/2 of the 2025-12-04 quiz
+ * Counts the total number of paper rolls removed by the Elves.
  */
 const quiz20251204_02 = () => {
   const totalRemoved = totalPaperRolls(input)
