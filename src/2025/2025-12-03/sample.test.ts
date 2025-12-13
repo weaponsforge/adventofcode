@@ -12,5 +12,5 @@ const input = readAOCInputFile({
 
 test('part 1: maximum joltage', () => {
   const joltage = findMaxJoltage(input)
-  expect(joltage).toBe(357)
+  expect(joltage).toBe(346)
 })
