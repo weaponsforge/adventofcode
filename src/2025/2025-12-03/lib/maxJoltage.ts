@@ -33,9 +33,9 @@ const highestNumber = (
 }
 
 /**
- * Calculates the sum of the 2 highest digits (joltage) per bank (input row)
+ * Calculates the sum of the 2 highest digits (joltage) in order per bank (input row)
  * @param {string[]} input - Input array
- * @returns {number} - Sum of the maximum joltage from each bank
+ * @returns {number} - Sum of the maximum joltage from 2 batteries for each bank
  */
 export const findMaxJoltage = (input: string[]) => {
   let joltage = 0
@@ -51,6 +51,42 @@ export const findMaxJoltage = (input: string[]) => {
     // Find the highest number for the 2nd digit
     const nextHighest = highestNumber(bank, highest.index + 1, bank.length)
     joltage += parseInt(`${highest.digit}${nextHighest.digit}`)
+  }
+
+  return joltage
+}
+
+/**
+ * Calculates the sum of the 12 highest digits (joltage) in order per bank (input row)
+ * @param {string[]} input - Input array
+ * @returns {number} - Sum of the maximum joltage from 12 batteries for each bank
+ */
+export const findMaxJoltageN = (input: string[]) => {
+  const MAX_DIGITS = 12
+  let joltage = 0
+
+  for (let i = 0; i < input.length; i += 1) {
+    const bank = input[i]
+      ?.split('')
+      .map(item => Number(item)) ?? []
+
+    // Find highest number for the 1st digit
+    const list: DigitType[] = []
+    const highest = highestNumber(bank, 0, bank.length - MAX_DIGITS + 1)
+
+    list.push(highest)
+
+    // Find the highest numbers for the rest of MAX_DIGITS
+    for (let j = 2; j <= MAX_DIGITS; j += 1) {
+      const start = (list[list.length - 1]?.index ?? 0) + 1
+      const end = bank.length - (MAX_DIGITS - j)
+
+      const high = highestNumber(bank, start, end)
+      list.push(high)
+    }
+
+    const batteries = list.map(item => item.digit).join('')
+    joltage += parseInt(batteries)
   }
 
   return joltage
