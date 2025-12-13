@@ -7,7 +7,7 @@ import { invalidID2x, invalidIDMultiple } from './lib/invalidIds.js'
 const inputFile = file(import.meta.url, 'input.txt')
 const input = fileReader(inputFile)
 
-test('part 1: sum of invald ids appearing 2x', () => {
+test('part 1: sum of invalid ids appearing 2x', () => {
   const sumInvalid = invalidID2x(input)
   expect(sumInvalid).toBe(1189292806)
 })

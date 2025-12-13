@@ -8,13 +8,18 @@ const input = fileReader(inputFile)
 
 /**
  * Part 1/2 of the 2025-12-02 quiz
- * Counts the sum of invalid IDs
+ * Counts the sum of invalid IDs with sequences appearing 2x
  */
 export const quiz20251202_01 = () => {
   const sumInvalid = invalidID2x(input)
   console.log(`Sum of invalid IDs part 1: ${sumInvalid}`)
 }
 
+/**
+ * Part 2/2 of the 2025-12-02 quiz
+ * Counts the sum of invalid IDs with all similar digits or
+ * sequences appearing 2x or more
+ */
 export const quiz20251202_02 = () => {
   const sumInvalid = invalidIDMultiple(input)
   console.log(`Sum of invalid IDs part 2: ${sumInvalid}`)
