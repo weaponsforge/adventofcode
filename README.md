@@ -29,6 +29,17 @@ This repository contains solutions and a local development environment for the [
 
 </details>
 
+<details>
+<summary><b style="font-size: 24px;">2025</b></summary>
+
+- Day 1: Secret Entrance [[link]](/src/2025/2025-12-01/README.md)
+- Day 2: Gift Shop [[link]](/src/2025/2025-12-02/README.md)
+- Day 3: Lobby [[link]](/src/2025/2025-12-03/README.md)
+- Day 4: Printing Department [[link]](/src/2025/2025-12-04/README.md)
+- Day 5: Cafeteria [[link]](/src/2025/2025-12-05/README.md)
+
+</details>
+
 ### Table of Contents
 
 <details>
