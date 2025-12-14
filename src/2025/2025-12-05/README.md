@@ -3,10 +3,10 @@
 Visit the Advent of Code website for more information on this puzzle at:
 
 **Source:** https://adventofcode.com/2025/day/5<br>
-**Status:** On-going ⭐
+**Status:** Complete ⭐⭐
 
 <br>
 
 | Code | Description |
 | --- | --- |
-| **fileReader.ts** | **`fileReader()`**<br>Reads the input file and returns an `IngredientsDBType` object - containing a list of the ID ranges of fresh ingredients (`freshIds[]`) and a list of available ingredients (`availableIds[]`).<br><br>**`findFreshIngredients()`**<br>Counts the number of fresh ingredients from the available ingredients. |
+| **fileReader.ts** | **`fileReader()`**<br>Reads the input file and returns an `IngredientsDBType` object - containing a list of the ID ranges of fresh ingredients (`freshIds[]`) and a list of available ingredients (`availableIds[]`).<br><br>**`findFreshIngredients()`**<br>Counts the number of fresh ingredients from the available ingredients.<br><br>**`freshIngredientIDs()`**<br>Finds the total number of unique fresh ingredients in the database. |
