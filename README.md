@@ -37,6 +37,7 @@ This repository contains solutions and a local development environment for the [
 - Day 3: Lobby [[link]](/src/2025/2025-12-03/README.md)
 - Day 4: Printing Department [[link]](/src/2025/2025-12-04/README.md)
 - Day 5: Cafeteria [[link]](/src/2025/2025-12-05/README.md)
+- Day 6: Trash Compactor [[link]](/src/2025/2025-12-06/README.md)
 
 </details>
 
