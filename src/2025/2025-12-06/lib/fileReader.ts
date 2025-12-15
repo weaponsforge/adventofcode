@@ -8,7 +8,7 @@ export interface MathInputType {
 }
 
 /**
- * Returns a `MathInputType` object containing a compact list of input numbers `{ numbers[][] }` arranged in grid and their vertical operations in `{ operations[] }`.
+ * Returns a `MathInputType` object containing a compact list of input numbers `{ numbers[][] }` arranged in a grid and their vertical operations in `{ operations[] }`.
  * @param {string} inputFilePath - Complete system file path to the input file.
  * @returns {MathInputType} A `MathInputType` object.
  */
@@ -44,7 +44,7 @@ export const fileReader = (inputFilePath: string): MathInputType => {
 }
 
 /**
- * Returns a `MathInputType` object containing an expanded list of input numbers `{ numbers[][] }` arranged in grid and their vertical operations in `{ operations[] }`. The `numbers[][]` data contains `"0"` for digit spaces and `"-1"` for vertical column separators.
+ * Returns a `MathInputType` object containing an expanded list of input numbers `{ numbers[][] }` arranged in a grid and their vertical operations in `{ operations[] }`. The `numbers[][]` data contains `"0"` for digit spaces and `"-1"` for vertical column separators.
  * @param {string} inputFilePath - Complete system file path to the input file.
  * @returns {MathInputType} A `MathInputType` object.
  */
