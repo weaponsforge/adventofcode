@@ -25,6 +25,5 @@ const quiz20251206_02 = () => {
   console.log(`Part 2 Grand total: ${grandTotal}`)
 }
 
-
 quiz20251206_01()
 quiz20251206_02()

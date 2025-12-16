@@ -38,7 +38,9 @@ export const additionMultiplication = (input: MathInputType) => {
 }
 
 /**
- * Calculates the grand total of vertical colums' result values using cephalopod math, reading vertically-aligned digits assigned to a block (problem) operator from right to left and top to bottom along the columns.
+ * Calculates the grand total of vertical colums' result values using cephalopod math,
+ * reading vertically-aligned digits and spaces (0's) assigned to a block (problem) operator
+ * from right to left and top to bottom along the columns.
  * @param {MathInputType} input - A `MathInputType` object `{ numbers[][], operations[] }` containing input data.
  * @returns {number}
  */

@@ -9,6 +9,14 @@ export interface MathInputType {
 
 /**
  * Returns a `MathInputType` object containing a compact list of input numbers `{ numbers[][] }` arranged in a grid and their vertical operations in `{ operations[] }`.
+ * @example output `MathInputType.numbers[][]`
+ * ```
+ * [
+ *   [123, 328, 51, 64],
+ *   [45, 54, 385, 23],
+ *   [6, 98, 215, 324]
+ * ]
+ * ```
  * @param {string} inputFilePath - Complete system file path to the input file.
  * @returns {MathInputType} A `MathInputType` object.
  */
@@ -44,7 +52,16 @@ export const fileReader = (inputFilePath: string): MathInputType => {
 }
 
 /**
- * Returns a `MathInputType` object containing an expanded list of input numbers `{ numbers[][] }` arranged in a grid and their vertical operations in `{ operations[] }`. The `numbers[][]` data contains `"0"` for digit spaces and `"-1"` for vertical column separators.
+ * Returns a `MathInputType` object containing an expanded list of input numbers `{ numbers[][] }` arranged in a grid and their vertical operations in `{ operations[] }`.
+ * The `numbers[][]` data contains `"0"` for digit spaces and `"-1"` for vertical column separators.
+ * @example output `MathInputType.numbers[][]`
+ * ```
+ * [
+ *   [1, 2, 3, -1, 3, 2, 8, -1, 0, 5, 1, -1, 6, 4, 0],
+ *   [0, 4, 5, -1, 5, 4, 0, -1, 3, 8, 5, -1, 2, 3, 0],
+ *   [0, 0, 6, -1, 9, 8, 0, -1, 2, 1, 5, -1, 3, 2, 4]
+ * ]
+ * ```
  * @param {string} inputFilePath - Complete system file path to the input file.
  * @returns {MathInputType} A `MathInputType` object.
  */
@@ -65,7 +82,7 @@ export const fileReaderRTL = (inputFilePath: string): MathInputType => {
   const spaceColumnLength = input.length
 
   // Find the indices of columns with spaces corresponding to the problem block separator (column with all spaces).
-  // The key (column index) with the largest value is index of the space separator.
+  // The key (column index) with the largest value is index of the column space separator.
   for (let i = 0; i < input.length; i += 1) {
     const row = input[i] ?? []
 
@@ -83,7 +100,7 @@ export const fileReaderRTL = (inputFilePath: string): MathInputType => {
     .filter(key => spaces[key] === spaceColumnLength)
     .map(item => Number(item))
 
-  // Reconstruct the input with 0's for spaces and the space separator replaced with -1's
+  // Reconstruct the input with 0's for spaces and the space separator columns replaced with -1's
   for (let i = 0; i < input.length - 1; i += 1) {
     const row = input[i] ?? []
     const digits = []
