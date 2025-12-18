@@ -157,3 +157,24 @@ export const printGrid = (grid: string[][] | number[][], delimeter: string = ' '
   if (!grid) return
   console.log(grid.map(row => row.join(delimeter)))
 }
+
+/**
+ * Creates an empty grid mirroring the `GridDimensions` (row length, column length) of a 2D array input.
+ * @template T Extends `string` or `number`, representing the type of elements in the 2D `grid` array.
+ * @param {T[][]} grid - A `string[][]`, `number[][]` 2D array.
+ * @param {string | number} defaultSymbol - Default symbol to fill the empty grid.
+ * @returns
+ */
+export const createGrid = <T extends string | number>(
+  grid: T[][],
+  defaultSymbol: string | number
+): string[][] | number[][] => {
+  const rows = grid.length
+  const columns = (grid[0] ?? []).length
+
+
+  return Array(rows)
+    .fill(null)
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    .map((_) => Array(columns).fill(defaultSymbol))
+}

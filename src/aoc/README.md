@@ -41,6 +41,7 @@ A collection of convenience handler functions for AoC 2D input arrays.
 - **`getDiagonalNeighbors()`** - Retrieves the four (4) diagonally aligned (y,x) coordinates and the symbol character from a `Point` in the grid. Substitutes a `"*"` symbol character in the `PointSymbol.symbol`if the `point` is out of the grid bounds.
 - **`getCrossNeighbors()`** - Retrieves the four (4) horizontal/vertical aligned (y,x) coordinates and the symbol character from a `Point` in the grid. Substitutes a `"*"` symbol character in the `PointSymbol.symbol`if the `point` is out of the grid bounds.
 - **`printGrid()`** - Prints the contents of a 2D `string` or `number` array to screen.
+- **`createGrid()`** - Creates an empty grid mirroring the `GridDimensions` (row length, column length) of a 2D array input.
 
 ### 📂 `number`
 
@@ -55,5 +56,3 @@ A collection of convenience handler functions for AoC 2D input arrays.
 
 - **`findNeighbors()`** - Finds all coordinates of the neighboring plots from a specified coordinate (up/down/left/right)
 - **`isDiagonal()`** - Checks if two (2) `Points` are diagonally aligned
-
-
