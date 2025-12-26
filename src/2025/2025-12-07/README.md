@@ -13,8 +13,8 @@ Visit the Advent of Code website for more information on this puzzle at:
 
 ---
 
-## Notes
+## References
 
 - [Tachyon](https://en.wikipedia.org/wiki/Tachyon)
 - [Tachyonic field](https://en.wikipedia.org/wiki/Tachyonic_field)
-- [Dynamic Programmin (DP)](https://en.wikipedia.org/wiki/Dynamic_programming)
+- [Dynamic Programming (DP)](https://en.wikipedia.org/wiki/Dynamic_programming)
