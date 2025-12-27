@@ -91,7 +91,7 @@ export const countTimelines = (input: string[][]) => {
 
     for (let x = 0; x < row.length; x += 1) {
       const current = { x, y }
-      const next = { ...current, y: y + 1 }
+      const next = { ...current, y: y + 1 } // down
 
       const symbol = getCoordinateSymbol(current, input)?.symbol ?? '-'
       const countValue = row[current.x] ?? 0
@@ -122,8 +122,8 @@ export const countTimelines = (input: string[][]) => {
     }
   }
 
-  const sumLastRow = (computeGrid[computeGrid.length - 1] ?? [])
-    .reduce((list, item) => list + item, 0)
+  const sumLastGridRow = (computeGrid[computeGrid.length - 1] ?? [])
+    .reduce((sum, item) => sum + item, 0)
 
-  return sumLastRow
+  return sumLastGridRow
 }
