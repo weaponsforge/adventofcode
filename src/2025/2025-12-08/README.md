@@ -3,14 +3,14 @@
 Visit the Advent of Code website for more information on this puzzle at:
 
 **Source:** https://adventofcode.com/2025/day/8<br>
-**Status:** On-going ⭐
+**Status:** Complete ⭐⭐
 
 <br>
 
 | Code | Description |
 | --- | --- |
 | **fileReader.ts** | **`fileReader()`**<br>Creates a `CircuitDataType[]` Object `{ distances, coordinates }` containing the array indices of pairs of 3D point coordinates in `{ distances.indices[] }` sorted from min-max of their square distances in `{ distances.distance }` and the input 3D coordinates in `{ coordinates }`. |
-| **distance3d.ts** | **`threeLargestCircuits()`**<br>Multiplies the sizes of the 3 largest circuits. |
+| **distance3d.ts** | **`threeLargestCircuits()`**<br>Calculates the product of the sizes of the 3 largest circuits.<br><br>**`singleCircuit()`**<br>Connects junction boxes to form 1 circuit, then computes the product of the last 2 circuit's x=coordinates. |
 
 ### References
 
