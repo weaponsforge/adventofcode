@@ -172,7 +172,6 @@ export const createGrid = <T extends string | number>(
   const rows = grid.length
   const columns = (grid[0] ?? []).length
 
-
   return Array(rows)
     .fill(null)
     // eslint-disable-next-line @typescript-eslint/no-unused-vars

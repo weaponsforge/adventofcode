@@ -40,6 +40,7 @@ This repository contains solutions and a local development environment for the [
 - Day 6: Trash Compactor [[link]](/src/2025/2025-12-06/README.md)
 - Day 7: Laboratories [[link]](/src/2025/2025-12-07/README.md)
 - Day 8: Playground [[link]](/src/2025/2025-12-08/README.md)
+- Day 9: Movie Theater [[link]](/src/2025/2025-12-09/README.md)
 
 </details>
 
